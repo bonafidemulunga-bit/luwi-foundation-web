@@ -1,0 +1,43 @@
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+body { line-height: 1.6; background-color: #fffaf0; color: #333; }
+header { background: linear-gradient(90deg, #ff6b6b, #ffb347); color: #fff; padding: 25px 0; text-align: center; }
+header h1 { font-size: 2.5em; margin-bottom: 10px; }
+nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
+nav a:hover { text-decoration: underline; }
+.hero { text-align: center; padding: 60px 20px; background: #ffd9b3; color: #333; }
+.hero h2 { font-size: 2.2em; margin-bottom: 20px; color: #ff4d6d; }
+.hero p { font-size: 1.2em; margin-bottom: 30px; color: #333; }
+.donate-btn { background-color: #ff4d6d; color: #fff; padding: 18px 35px; border: none; border-radius: 10px; font-size: 1.2em; cursor: pointer; transition: background 0.3s; margin: 10px; }
+.donate-btn:hover { background-color: #ff6b6b; }
+.section { padding: 50px 20px; max-width: 1200px; margin: 0 auto; }
+.section h3 { font-size: 2em; margin-bottom: 20px; color: #ff4d6d; text-align: center; }
+.section p { font-size: 1.1em; margin-bottom: 20px; text-align: center; color: #555; }
+.cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
+.card { background-color: #fff3e6; border-radius: 10px; padding: 25px; width: 320px; text-align: center; box-shadow: 0px 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
+.card:hover { transform: translateY(-10px); }
+.card h4 { margin-bottom: 15px; color: #ff8c42; }
+.card p { color: #333; }
+#donate-section { background-color:#fff1e6; text-align:center; padding:60px 20px; }
+#donate-section h3 { color:#ff4d6d; margin-bottom:20px; }
+#donate-section p { font-size:1.2em; margin-bottom:30px; color:#555; }
+.donation-methods { display:flex; justify-content:center; flex-wrap:wrap; gap:20px; margin-top:20px; }
+.method { background:#ff6b6b; color:#fff; padding:20px 25px; border-radius:10px; font-size:1.1em; cursor:pointer; transition: background 0.3s; }
+.method:hover { background:#ff4d6d; }
+.counter { background: #ffde7d; text-align:center; padding:50px 20px; font-size:1.2em; color:#333; }
+.counter h3 { font-size:2em; color:#ff4d6d; margin-bottom:20px; }
+.counter span { font-weight:bold; color:#ff6b6b; font-size:2em; }
+.testimonials { background:#fff3e6; padding:60px 20px; }
+.testimonial-card { background:#fffaf0; border-left:5px solid #ff6b6b; margin:20px auto; padding:20px; max-width:700px; border-radius:8px; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
+.testimonial-card p { font-style:italic; color:#333; }
+.testimonial-card h5 { text-align:right; margin-top:10px; color:#ff4d6d; }
+.testimonial-media { margin-top:15px; }
+.plea { background:#ff6b6b; color:#fff; text-align:center; padding:60px 20px; }
+.plea h3 { font-size:2em; margin-bottom:20px; }
+.plea p { font-size:1.2em; margin-bottom:30px; }
+.media-section { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:30px; }
+.media-card { max-width:350px; text-align:center; }
+.media-card img, .media-card video { width:100%; border-radius:10px; }
+footer { background-color: #ff6b6b; color: #fff; text-align: center; padding: 25px; }
+footer p { margin-bottom: 10px; }
+@media (max-width: 768px) { .cards, .media-section { flex-direction: column; align-items: center; } .donation-methods { flex-direction: column; } }
