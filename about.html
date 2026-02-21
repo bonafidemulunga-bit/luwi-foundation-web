@@ -6,7 +6,50 @@
     <title>About LUWI Foundation</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Additional styles specific to about page */
+        /* Header styles (add these so about page matches home page) */
+        header { 
+            background: #f90FFC; 
+            color: #fff; 
+            padding: 10px 20px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+        }
+        nav ul { 
+            list-style: none; 
+            display: flex; 
+            gap: 15px; 
+        }
+        nav ul li a { 
+            color: #fff; 
+            text-decoration: none; 
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+        nav ul li a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .logo { 
+            height: 50px; 
+        }
+        footer { 
+            text-align: center; 
+            background: #f90FFC; 
+            color: #fff; 
+            padding: 20px; 
+            margin-top: 40px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Your existing about page styles */
         .about-hero {
             background: linear-gradient(135deg, #1E90FF, #1873cc);
             color: white;
@@ -108,7 +151,72 @@
             margin-bottom: 20px;
             color: #FF6347;
         }
-        
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="LUWI Foundation Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about-hero">
+        <h1>About LUWI Foundation</h1>
+        <p>Dedicated to transforming lives through education, healthcare, and community development in Zambia and beyond.</p>
+    </section>
+
+    <div class="mission-vision">
+        <div class="mission-box">
+            <h2>Our Mission</h2>
+            <p>To empower communities in Zambia and beyond through sustainable education programs, accessible healthcare initiatives, and community development projects that create lasting change.</p>
+        </div>
+        <div class="vision-box">
+            <h2>Our Vision</h2>
+            <p>A future where every individual has access to quality education, proper healthcare, and opportunities to build thriving communities.</p>
+        </div>
+    </div>
+
+    <section class="values-section">
+        <h2>Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">📚</div>
+                <h3>Education First</h3>
+                <p>We believe education is the foundation of lasting change and opportunity.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">❤️</div>
+                <h3>Compassion</h3>
+                <p>We approach every project with empathy and understanding for community needs.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h3>Integrity</h3>
+                <p>We operate with transparency, honesty, and accountability to our donors and communities.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🌍</div>
+                <h3>Sustainability</h3>
+                <p>We create solutions that communities can maintain and grow independently.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 LUWI Foundation. All rights reserved.</p>
+        <p>
+            <a href="#">Facebook</a> | 
+            <a href="#">Instagram</a> | 
+            <a href="#">Twitter</a>
+        </p>
+    </footer>
+</body>
+</html>        
         .value-card h3 {
             font-size: 24px;
             color: #1E90FF;
