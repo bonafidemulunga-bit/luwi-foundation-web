@@ -1,39 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About LUWI Foundation</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About LUWI Foundation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Additional styles specific to about page */
+        .about-hero {
+            background: linear-gradient(135deg, #1E90FF, #1873cc);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 40px;
+        }
+        
+        .about-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .about-hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+        
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        .mission-box, .vision-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .mission-box:hover, .vision-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .mission-box h2, .vision-box h2 {
+            font-size: 32px;
+            color: #1E90FF;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .mission-box h2:after, .vision-box h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #FF6347;
+        }
+        
+        .mission-box p, .vision-box p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+        }
+        
+        .values-section {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .values-section h2 {
+            font-size: 36px;
+            color: #1E90FF;
+            margin-bottom: 40px;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #FF6347;
+        }
+        
+        .value-card h3 {
+            font-size: 24px;
+            color: #1E90FF;
+            margin-bottom: 15px;
+        }
+        
+        .value-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .impact-stats {
+            background: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .impact-stats h2 {
+            font-size: 36px;
+            color: #1E90FF;
+            margin-bottom: 40px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .stat-item {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #FF6347;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .video-section {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .video-section h2 {
+            font-size: 36px;
+            color: #1E90FF;
+            margin-bottom: 30px;
+        }
+        
+        .video-container {
+            background: #f0f8ff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .video-container video {
+            width: 100%;
+            max-height: 500px;
+            border-radius: 10px;
+            background: #000;
+        }
+        
+        .video-placeholder {
+            background: #e0e0e0;
+            border-radius: 10px;
+            padding: 100px 20px;
+            text-align: center;
+            color: #666;
+        }
+        
+        .video-placeholder p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        
+        .team-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1E90FF, #1873cc);
+            color: white;
+            text-align: center;
+        }
+        
+        .team-section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .member-info {
+            padding: 20px;
+        }
+        
+        .member-info h3 {
+            font-size: 22px;
+            color: #1E90FF;
+            margin-bottom: 5px;
+        }
+        
+        .member-info p {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 36px;
+            }
+            
+            .about-hero p {
+                font-size: 18px;
+            }
+            
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+            
+            .values-grid, .stats-grid, .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-  <img src="images/logo.png" alt="LUWI Foundation Logo" class="logo">
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="donate.html">Donate</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-<main>
-  <section class="about">
-    <h1>About LUWI Foundation</h1>
-    <p>Founded with the mission to empower vulnerable communities, LUWI Foundation focuses on education, health, and economic development.</p>
-    <p>We organize community programs, provide scholarships, and partner with local organizations to make a lasting impact.</p>
-  </section>
-  <section class="video-intro">
-    <h2>Our Work in Action</h2>
-    <video controls>
-      <source src="videos/intro.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </section>
-</main>
-<footer>
-  <p>&copy; 2026 LUWI Foundation. All rights reserved.</p>
-</footer>
+    <header>
+        <img src="images/logo.png" alt="LUWI Foundation Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <h1>About LUWI Foundation</h1>
+            <p>Empowering communities, transforming lives, and building a brighter future for Zambia and beyond.</p>
+        </section>
+
+        <!-- Mission & Vision -->
+        <div class="mission-vision">
+            <div class="mission-box">
+                <h2>Our Mission</h2>
+                <p>To empower vulnerable communities in Zambia through sustainable education programs, accessible healthcare initiatives, and economic development opportunities that create lasting change.</p>
+            </div>
+            <div class="vision-box">
+                <h2>Our Vision</h2>
+                <p>A Zambia where every individual has equal access to quality education, healthcare, and economic opportunities to reach their full potential.</p>
+            </div>
+        </div>
+
+        <!-- Core Values -->
+        <section class="values-section">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Integrity</h3>
+                    <p>We operate with transparency, honesty, and accountability in all our actions.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>Community First</h3>
+                    <p>We prioritize the needs and voices of the communities we serve.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation</h3>
+                    <p>We embrace creative solutions to address complex challenges.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤲</div>
+                    <h3>Compassion</h3>
+                    <p>We approach our work with empathy and understanding.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Statistics -->
+        <section class="impact-stats">
+            <h2>Our Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Students Supported</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Community Programs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Partner Organizations</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Lives Impacted</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section class="video-section">
+            <h2>Our Work in Action</h2>
+            <div class="video-container">
+                <!-- Video player with fallback -->
+                <video controls poster="images/video-poster.jpg">
+                    <source src="videos/intro.mp4" type="video/mp4">
+                    <source src="videos/intro.webm" type="video/webm">
+                    
+                    <!-- Fallback content if video doesn't load -->
+                    <div class="video-placeholder">
+                        <div style="font-size: 48px;">🎥</div>
+                        <h3 style="color: #1E90FF; margin: 15px 0;">Video Coming Soon</h3>
+                        <p>Your browser doesn't support HTML5 video or the video file is still being uploaded.</p>
+                        <p style="margin-top: 20px; color: #666;">Please check back later to see our impact in action!</p>
+                    </div>
+                </video>
+                
+                <!-- Video description -->
+                <p style="margin-top: 20px; color: #666; font-style: italic;">
+                    Watch how LUWI Foundation is making a difference in communities across Zambia.
+                </p>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/team/placeholder.jpg" alt="Team Member" onerror="this.src='data:image/svg+xml,...'">
+                    <div class="member-info">
+                        <h3>Dr. Sarah Mulenga</h3>
+                        <p>Founder & Executive Director</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="images/team/placeholder.jpg" alt="Team Member">
+                    <div class="member-info">
+                        <h3>John Banda</h3>
+                        <p>Programs Coordinator</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="images/team/placeholder.jpg" alt="Team Member">
+                    <div class="member-info">
+                        <h3>Mary Phiri</h3>
+                        <p>Education Director</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 LUWI Foundation. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a>
+        </p>
+    </footer>
+
+    <script>
+        // Optional: Add active class to current page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentLocation = window.location.pathname;
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                if(link.getAttribute('href') === 'about.html') {
+                    link.style.background = 'rgba(255,255,255,0.2)';
+                    link.style.padding = '5px 10px';
+                    link.style.borderRadius = '4px';
+                }
+            });
+        });
+    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
