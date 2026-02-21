@@ -1,0 +1,2 @@
+document.getElementById('donation-form')?.addEventListener('submit', function(e){e.preventDefault(); alert('Thank you for your donation!');});
+document.getElementById('contact-form')?.addEventListener('submit', function(e){e.preventDefault(); alert('Message sent! We will contact you soon.');});
