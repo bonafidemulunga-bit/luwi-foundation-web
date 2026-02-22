@@ -4,192 +4,65 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LUWI Foundation Zambia - Home</title>
-
-<style>
-body { 
-    font-family: Arial, sans-serif; 
-    margin:0; 
-    padding:0; 
-    line-height:1.6; 
-    background:#f9f9f9; 
-}
-
-header { 
-    background:#f90FFC; 
-    color:#fff; 
-    padding:10px 20px; 
-    display:flex; 
-    align-items:center; 
-    justify-content:space-between; 
-    position:sticky; 
-    top:0; 
-    z-index:1000; 
-}
-
-nav ul { 
-    list-style:none; 
-    display:flex; 
-    gap:15px; 
-    margin:0; 
-}
-
-nav ul li a { 
-    color:#fff; 
-    text-decoration:none; 
-    padding:5px 10px; 
-    border-radius:4px; 
-    transition:0.3s; 
-}
-
-nav ul li a:hover { 
-    background: rgba(255,255,255,0.2); 
-}
-
-.logo { height:50px; }
-
-/* HERO BANNER FIXED */
-.hero {
-    background-image: url('images/banner.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.hero-text {
-    position: relative;
-    color: #fff;
-    text-align: center;
-    z-index: 1;
-}
-
-.hero-text h1 { 
-    font-size:48px; 
-    margin-bottom:20px; 
-}
-
-.btn { 
-    background:#ff6347; 
-    color:#fff; 
-    padding:10px 20px; 
-    text-decoration:none; 
-    border-radius:5px; 
-    display:inline-block; 
-    margin:10px; 
-}
-
-.btn:hover { background:#ff4500; }
-
-section { padding:60px 20px; text-align:center; }
-
-.section-light { background:#ffffff; }
-.section-grey { background:#f0f0f0; }
-
-h2 { color:#1E90FF; }
-
-.content-container { 
-    max-width:1000px; 
-    margin:auto; 
-    text-align:left; 
-}
-
-ul { line-height:1.8; }
-
-footer { 
-    text-align:center; 
-    background:#f90FFC; 
-    color:#fff; 
-    padding:20px; 
-}
-
-footer a { 
-    color:#fff; 
-    text-decoration:none; 
-    margin:0 10px; 
-}
-
-footer a:hover { text-decoration:underline; }
-
-/* Mobile Fix */
-@media(max-width:768px){
-    .hero-text h1{
-        font-size:30px;
-    }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
-<img src="images/logo.png" alt="LUWI Foundation Zambia Logo" class="logo">
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="programs.html">Programs</a></li>
-<li><a href="donate.html">Donate</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
+    <img src="images/logo.png" alt="LUWI Foundation Logo" class="logo">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 </header>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 <section class="hero">
-<div class="hero-text">
-<h1>LUWI Foundation Zambia</h1>
-<p>As long as a student is affected — we are there.</p>
-<a href="donate.html" class="btn">Donate Now</a>
-<a href="about.html" class="btn">Learn More</a>
-</div>
+    <div class="hero-text">
+        <h1>LUWI Foundation Zambia</h1>
+        <p>As long as a student is affected — we are there.</p>
+        <a href="donate.html" class="btn">Donate Now</a>
+        <a href="about.html" class="btn">Learn More</a>
+    </div>
 </section>
 
 <!-- INTRO -->
 <section class="section-light">
-<div class="content-container">
-<h2>Welcome to LUWI Foundation Zambia</h2>
-<p>LUWI Foundation Zambia is committed to empowering students and communities in Zambia through education, healthcare, emergency relief, and social empowerment.</p>
-<p>We believe that every student deserves a safe environment to grow academically, socially, and creatively. Join us in our mission to transform lives.</p>
-<a href="programs.html" class="btn">Explore Our Programs</a>
-</div>
+    <div class="content-container">
+        <h2>Welcome to LUWI Foundation Zambia</h2>
+        <p>LUWI Foundation Zambia is committed to empowering students and communities in Zambia through education, healthcare, emergency relief, and social empowerment.</p>
+        <p>We believe that every student deserves a safe environment to grow academically, socially, and creatively. Join us in our mission to transform lives.</p>
+        <a href="programs.html" class="btn">Explore Our Programs</a>
+    </div>
 </section>
 
 <!-- HIGHLIGHTS -->
 <section class="section-grey">
-<div class="content-container">
-<h2>Our Focus Areas</h2>
-<ul>
-<li>Student Mental Health & Counseling</li>
-<li>Gender-Based Violence (GBV) Prevention</li>
-<li>Educational Support & Scholarships</li>
-<li>Emergency Relief & Crisis Response</li>
-<li>Talent & Entrepreneurship Development</li>
-<li>Women & Child Welfare Programs</li>
-<li>Environmental Sustainability Initiatives</li>
-</ul>
-<a href="about.html" class="btn">About Us</a>
-</div>
+    <div class="content-container">
+        <h2>Our Focus Areas</h2>
+        <ul>
+            <li>Student Mental Health & Counseling</li>
+            <li>Gender-Based Violence (GBV) Prevention</li>
+            <li>Educational Support & Scholarships</li>
+            <li>Emergency Relief & Crisis Response</li>
+            <li>Talent & Entrepreneurship Development</li>
+            <li>Women & Child Welfare Programs</li>
+            <li>Environmental Sustainability Initiatives</li>
+        </ul>
+        <a href="about.html" class="btn">About Us</a>
+    </div>
 </section>
 
 <footer>
-<p>© 2026 LUWI Foundation Zambia. All rights reserved.</p>
-<p>
-<a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
-</p>
+    <p>© 2026 LUWI Foundation Zambia. All rights reserved.</p>
+    <p>
+        <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+    </p>
 </footer>
 
 </body>
