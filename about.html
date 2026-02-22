@@ -1,114 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us - LUWI Foundation</title>
-<style>
-  /* Reset & Base */
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: Arial, sans-serif; line-height:1.6; background:#f0f2f5; color:#333; }
-  a { text-decoration:none; color:inherit; }
-
-  /* Header */
-  header { background:#007BFF; padding:15px 20px; color:white; }
-  header div { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; }
-  header h1 { font-size:24px; }
-  header nav a { color:white; margin:0 10px; transition:0.3s; }
-  header nav a:hover { text-decoration:underline; }
-
-  /* Container */
-  .container { max-width:1000px; margin:0 auto; padding:40px 20px; }
-
-  /* Header Section */
-  .header-section { text-align:center; margin-bottom:50px; }
-  .header-section h1 { color:#007BFF; font-size:38px; margin-bottom:10px; }
-  .header-section p { font-size:18px; color:#555; }
-
-  /* Sections */
-  .section { margin-bottom:50px; }
-  .section h2 { color:#007BFF; font-size:28px; margin-bottom:20px; border-bottom:2px solid #007BFF; display:inline-block; padding-bottom:5px; }
-  .section p { font-size:16px; color:#555; margin-bottom:15px; }
-
-  /* Stats */
-  .stats { display:flex; justify-content:space-around; flex-wrap:wrap; margin-top:30px; }
-  .stat { background:#fff; flex:1 1 200px; margin:10px; padding:25px 20px; border-radius:12px; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:0.3s; }
-  .stat:hover { transform:translateY(-5px); }
-  .stat h3 { color:#007BFF; font-size:36px; margin-bottom:10px; }
-  .stat p { font-size:16px; color:#555; }
-
-  /* Image */
-  .about-image { text-align:center; margin-top:30px; }
-  .about-image img { max-width:100%; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.1); }
-
-  /* Call-to-Action */
-  .cta { background:#007BFF; color:#fff; text-align:center; padding:40px 20px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
-  .cta h2 { font-size:28px; margin-bottom:20px; }
-  .cta a { display:inline-block; background:#fff; color:#007BFF; padding:15px 30px; border-radius:8px; font-weight:bold; transition:0.3s; }
-  .cta a:hover { background:#e6f0ff; }
-
-  @media (max-width:768px) { .stats { flex-direction:column; align-items:center; } }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About LUWI Foundation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Header -->
-<header>
-  <div>
-    <h1>LUWI Foundation</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="programs.html">Programs</a>
-      <a href="about.html">About</a>
-      <a href="donate.html">Donate</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+    <!-- Consistent Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="LUWI Foundation Logo" />
+                </a>
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<div class="container">
-  <!-- Header Section -->
-  <div class="header-section">
-    <h1>About LUWI Foundation</h1>
-    <p>Empowering students and communities in Zambia through education, awareness, and support programs.</p>
-  </div>
+    <!-- About Content -->
+    <main class="container">
+        <h1>About LUWI Foundation</h1>
+        <p>LUWI Foundation is dedicated to raising awareness on intersex and sexual health issues among students in Zambia. We have reached over 1,000 students, partnered with the Intersex Society of Zambia and Zambian Royal Medical University, and organized countless impactful events. Our programs aim to empower students with knowledge, reduce stigma, and provide a platform for testimonies and open discussion.</p>
 
-  <!-- Mission -->
-  <div class="section">
-    <h2>Our Mission</h2>
-    <p>LUWI Foundation is dedicated to creating awareness, providing educational support, and uplifting vulnerable students across Zambia. We focus on fostering an inclusive environment for learning, personal growth, and empowerment.</p>
-  </div>
+        <p>Our work continues because of generous donors who believe in supporting education, health awareness, and student empowerment. Even small contributions help us reach more students and create lasting change in communities.</p>
 
-  <!-- What We Do -->
-  <div class="section">
-    <h2>What We Do</h2>
-    <p>Through workshops, school visits, and community programs, LUWI Foundation reaches hundreds of students every year. We partner with schools, universities, and organizations to deliver impactful sessions on education, health, and social awareness.</p>
-    <p>Our programs tackle real student struggles such as financial limitations, mental health challenges, and lack of access to critical resources. By engaging with pupils, college, and university students directly, we provide practical guidance and mentorship.</p>
-  </div>
-
-  <!-- Impact Stats -->
-  <div class="section">
-    <h2>Our Impact</h2>
-    <div class="stats">
-      <div class="stat"><h3>1000+</h3><p>Students reached</p></div>
-      <div class="stat"><h3>50+</h3><p>Schools visited</p></div>
-      <div class="stat"><h3>3</h3><p>Partnerships formed</p></div>
-      <div class="stat"><h3>100+</h3><p>Events organized</p></div>
-    </div>
-  </div>
-
-  <!-- Image -->
-  <div class="about-image">
-    <img src="https://via.placeholder.com/900x400.png?text=LUWI+Foundation+Awareness+Programs" alt="LUWI Foundation Awareness Programs">
-  </div>
-
-  <!-- Call-to-Action -->
-  <div class="cta">
-    <h2>Join Us in Making a Difference</h2>
-    <p>Your support helps us reach more students and expand our programs. Together, we can empower the next generation.</p>
-    <a href="donate.html">Donate Now</a>
-  </div>
-</div>
+        <p>Currently, we also run awareness programs in colleges and universities, addressing the unique struggles students face today, including mental health, sexual health, and access to reliable information.</p>
+    </main>
 
 </body>
 </html>
