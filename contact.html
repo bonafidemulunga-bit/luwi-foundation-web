@@ -4,10 +4,57 @@
     <meta charset="UTF-8">
     <title>Contact Us - LUWI Foundation</title>
     <style>
-        body { font-family: Arial, sans-serif; background:#f4f4f4; padding:20px; }
-        .container { background:white; padding:20px; border-radius:8px; max-width:600px; margin:auto; }
-        h1 { color:#2c3e50; }
+        body { 
+            font-family: Arial, sans-serif; 
+            background:#f4f4f4; 
+            padding:20px; 
+            line-height: 1.6;
+        }
+        .container { 
+            background:white; 
+            padding:30px; 
+            border-radius:10px; 
+            max-width:700px; 
+            margin:auto; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 { color:#2c3e50; text-align:center; margin-bottom:30px; }
         a { color:#27ae60; text-decoration:none; }
+        p { color: #555; }
+        
+        /* Chatbox Styles */
+        .chatbox {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 30px;
+            background: #f9f9f9;
+        }
+        .chat-messages {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 5px;
+        }
+        .chat-message {
+            margin: 8px 0;
+        }
+        .user { text-align: right; color: #2c3e50; }
+        .bot { text-align: left; color: #27ae60; }
+        input[type="text"] {
+            width: 80%;
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 8px 12px;
+            border: none;
+            border-radius:5px;
+            background: #27ae60;
+            color: white;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -20,6 +67,60 @@
         <a href="mailto:luwifoundationzambia@gmail.com">luwifoundationzambia@gmail.com</a>
     </p>
     <p>Feel free to reach out to us for support, partnership, or inquiries.</p>
+
+    <h2>Chat with us!</h2>
+    <p>Ask any question about LUWI Foundation Zambia, our programs, or donations:</p>
+
+    <div class="chatbox">
+        <div class="chat-messages" id="chatMessages"></div>
+        <input type="text" id="userInput" placeholder="Type your question..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
 </div>
+
+<script>
+    const chatMessages = document.getElementById('chatMessages');
+
+    // Predefined Q&A for LUWI Foundation
+    const responses = [
+        { question: /programs|activities/i, answer: "LUWI Foundation runs programs in Education Support, Community Empowerment, Emergency Relief, and Awareness Campaigns." },
+        { question: /donate|contribute/i, answer: "You can donate via Airtel or MTN mobile money, bank transfer, or material donations. Please visit our Donate page for details." },
+        { question: /contact|reach/i, answer: "You can contact us via WhatsApp +260 969 852 932 or email luwifoundationzambia@gmail.com." },
+        { question: /education/i, answer: "Our Education Support Program provides school fees, uniforms, books, and mentorship to vulnerable students." },
+        { question: /community|empowerment/i, answer: "Our Community Empowerment Program offers skills training, workshops, and mentorship for youth and women." },
+        { question: /emergency|relief/i, answer: "We support families in crisis with food, essential supplies, and temporary shelter." },
+        { question: /awareness/i, answer: "Our Awareness Programs cover health, hygiene, gender equality, child protection, and environmental conservation." },
+        { question: /.*/, answer: "Sorry, I am not sure about that. Please contact us directly via WhatsApp or email for more information." }
+    ];
+
+    function sendMessage() {
+        const userInput = document.getElementById('userInput').value.trim();
+        if (!userInput) return;
+
+        // Display user message
+        const userMessageDiv = document.createElement('div');
+        userMessageDiv.className = 'chat-message user';
+        userMessageDiv.textContent = userInput;
+        chatMessages.appendChild(userMessageDiv);
+
+        // Get bot response
+        let answer = "Sorry, I am not sure about that. Please contact us directly via WhatsApp or email.";
+        for (let r of responses) {
+            if (r.question.test(userInput)) {
+                answer = r.answer;
+                break;
+            }
+        }
+
+        const botMessageDiv = document.createElement('div');
+        botMessageDiv.className = 'chat-message bot';
+        botMessageDiv.textContent = answer;
+        chatMessages.appendChild(botMessageDiv);
+
+        // Clear input and scroll to bottom
+        document.getElementById('userInput').value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+</script>
 </body>
 </html>
