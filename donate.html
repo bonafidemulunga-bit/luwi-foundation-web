@@ -11,7 +11,7 @@
     background: white;
     padding: 40px;
     border-radius: 10px;
-    max-width: 800px;
+    max-width: 850px;
     margin: 40px auto;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
@@ -50,8 +50,8 @@ label {
     cursor: pointer;
 }
 
-input[type="number"] {
-    width: 100px;
+input[type="number"], select {
+    width: 120px;
     margin-left: 10px;
     padding: 5px;
 }
@@ -61,6 +61,49 @@ input[type="number"] {
     color: #888;
     margin-top: 20px;
 }
+
+/* Chatbox */
+.chatbox {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 30px;
+    background: #f9f9f9;
+}
+
+.chat-messages {
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.chat-message {
+    margin: 10px 0;
+}
+
+.user { text-align: right; color: #2c3e50; font-weight: 600; }
+.bot { text-align: left; color: #27ae60; font-weight: 600; }
+
+input[type="text"] {
+    width: 75%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius:5px;
+    background: #27ae60;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 5px;
+}
+button:hover { background: #219150; }
 </style>
 </head>
 <body>
@@ -85,30 +128,38 @@ input[type="number"] {
 
 <h1>Support LUWI Foundation Zambia</h1>
 
-<h2>Choose Your Donation Amount</h2>
-<p>Your contribution helps us run programs that transform lives. Select an amount below or enter your own:</p>
+<h2>Choose Your Currency & Donation Amount</h2>
+<p>Your contribution helps transform the lives of vulnerable students and families. Select your currency and donation amount:</p>
 
 <form class="donation-options">
     <label>
-        <input type="radio" name="amount" value="50"> $50 - Helps provide school books for 2 children
+        Currency: 
+        <select name="currency">
+            <option value="ZMW">ZMW (Zambian Kwacha)</option>
+            <option value="USD">USD (US Dollar)</option>
+            <option value="EUR">EUR (Euro)</option>
+        </select>
+    </label>
+
+    <label>
+        <input type="radio" name="amount" value="50"> 50 - Helps provide school books for 2 children
     </label>
     <label>
-        <input type="radio" name="amount" value="100"> $100 - Supports a family with emergency food supplies
+        <input type="radio" name="amount" value="100"> 100 - Supports a family with emergency food supplies
     </label>
     <label>
-        <input type="radio" name="amount" value="250"> $250 - Funds skills training and mentorship programs
+        <input type="radio" name="amount" value="250"> 250 - Funds skills training and mentorship programs
     </label>
     <label>
-        <input type="radio" name="amount" value="other"> Other amount: $<input type="number" name="customAmount" min="1">
+        <input type="radio" name="amount" value="other"> Other amount: <input type="number" name="customAmount" min="1">
     </label>
 </form>
 
-<h2>How Your Donation is Used</h2>
+<h2>Impact of Your Donation</h2>
 <ul class="used-for">
-    <li><strong>Education Support:</strong> School fees, uniforms, books, mentorship</li>
-    <li><strong>Community Empowerment:</strong> Skills training, workshops, entrepreneurship programs</li>
-    <li><strong>Emergency Relief:</strong> Food, essential supplies, temporary shelter</li>
-    <li><strong>Awareness Campaigns:</strong> Health, hygiene, gender equality, child protection</li>
+    <li><strong>Vulnerable students:</strong> Receive school fees, books, uniforms, and mentorship to succeed academically.</li>
+    <li><strong>Vulnerable pupils:</strong> Benefit from daily meals, school supplies, and small upkeep for learning continuity.</li>
+    <li>If you cannot donate directly to LUWI Foundation Zambia, you can choose a student from your contact list and provide essential items or small support for their daily needs.</li>
 </ul>
 
 <h2>Mobile Money Donations</h2>
@@ -126,6 +177,15 @@ input[type="number"] {
 
 <p class="note">Note: We are currently working on official bank and registered mobile money accounts for the organization.</p>
 
+<h2>Donation Chat Assistant</h2>
+<p>Ask any questions about currency, exchange rates, or impact of your donation:</p>
+
+<div class="chatbox">
+    <div class="chat-messages" id="chatMessages"></div>
+    <input type="text" id="userInput" placeholder="Type your question..." />
+    <button onclick="sendMessage()">Send</button>
+</div>
+
 </div>
 </section>
 
@@ -136,6 +196,48 @@ input[type="number"] {
 <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
 </p>
 </footer>
+
+<script>
+// Chatbot functionality
+const chatMessages = document.getElementById('chatMessages');
+
+const responses = [
+    { question: /currency|exchange/i, answer: "You can donate in ZMW, USD, or EUR. Current exchange rates may vary; please check your bank or mobile money provider for exact conversion." },
+    { question: /impact|student|pupil/i, answer: "Your donation helps provide school fees, books, uniforms, meals, and mentorship to vulnerable students and pupils." },
+    { question: /donate directly/i, answer: "If you cannot donate to LUWI Foundation Zambia directly, you can select a student from your contact list and support them with bundles or small daily upkeep." },
+    { question: /mobile|bank/i, answer: "You can use Airtel or MTN mobile money, or contact us for bank transfer details." },
+    { question: /material/i, answer: "You can donate items such as books, uniforms, or food. Contact us via WhatsApp or email for details." },
+    { question: /.*/, answer: "Sorry, I am not sure. Please contact us via WhatsApp or email for help." }
+];
+
+function sendMessage() {
+    const userInput = document.getElementById('userInput').value.trim();
+    if (!userInput) return;
+
+    // Display user message
+    const userMessageDiv = document.createElement('div');
+    userMessageDiv.className = 'chat-message user';
+    userMessageDiv.textContent = userInput;
+    chatMessages.appendChild(userMessageDiv);
+
+    // Find answer
+    let answer = "Sorry, I am not sure. Please contact us via WhatsApp or email for help.";
+    for (let r of responses) {
+        if (r.question.test(userInput)) {
+            answer = r.answer;
+            break;
+        }
+    }
+
+    const botMessageDiv = document.createElement('div');
+    botMessageDiv.className = 'chat-message bot';
+    botMessageDiv.textContent = answer;
+    chatMessages.appendChild(botMessageDiv);
+
+    document.getElementById('userInput').value = '';
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+</script>
 
 </body>
 </html>
