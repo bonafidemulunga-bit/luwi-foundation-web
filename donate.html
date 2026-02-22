@@ -5,6 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate to LUWI Foundation</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Minimal form styling */
+        .donation-form {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .donation-form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        .donation-form input, 
+        .donation-form select, 
+        .donation-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .donation-form button {
+            background-color: #f90FFC;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+
+        .donation-instructions {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -28,21 +71,84 @@
         </div>
     </header>
 
-    <!-- Donate Content -->
     <main class="container">
         <h1>Support LUWI Foundation</h1>
+        <p>Use the form below to make a donation. Your contribution helps us reach more students and create meaningful programs across Zambia.</p>
 
-        <p>LUWI Foundation relies on generous donations to continue our outreach and awareness programs for students across Zambia. Your support allows us to provide workshops, host events, and reach communities that need sexual health education and guidance.</p>
+        <!-- Donation Form -->
+        <div class="donation-form">
+            <label for="amount">Donation Amount (ZMW)</label>
+            <select id="amount">
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="500">500</option>
+                <option value="custom">Custom Amount</option>
+            </select>
 
-        <h2>Ways to Donate</h2>
-        <ul>
-            <li><strong>Airtel:</strong> 0972308641</li>
-            <li><strong>MTN:</strong> 0969852932</li>
-            <li>For bank transfers or additional details, reach out via WhatsApp: +260969852932 or email: <a href="mailto:luwifoundationzambia@gmail.com">luwifoundationzambia@gmail.com</a></li>
-        </ul>
+            <input type="number" id="customAmount" placeholder="Enter custom amount" style="display:none;">
 
-        <p>Every donation, no matter the size, helps us reach more students and create lasting impact in their communities. Thank you for supporting our mission and helping young people access the knowledge and support they deserve.</p>
+            <label for="phone">Your Mobile Number</label>
+            <input type="tel" id="phone" placeholder="e.g. 096XXXXXXX" required>
+
+            <label for="network">Select Mobile Network</label>
+            <select id="network">
+                <option value="MTN">MTN Mobile Money</option>
+                <option value="Airtel">Airtel Money</option>
+            </select>
+
+            <button onclick="generateInstructions()">Donate</button>
+
+            <!-- Instructions Output -->
+            <div class="donation-instructions" id="instructions"></div>
+        </div>
     </main>
+
+    <script>
+        const amountSelect = document.getElementById('amount');
+        const customAmount = document.getElementById('customAmount');
+
+        amountSelect.addEventListener('change', () => {
+            if(amountSelect.value === 'custom'){
+                customAmount.style.display = 'block';
+            } else {
+                customAmount.style.display = 'none';
+            }
+        });
+
+        function generateInstructions(){
+            let amount = amountSelect.value === 'custom' ? customAmount.value : amountSelect.value;
+            const phone = document.getElementById('phone').value.trim();
+            const network = document.getElementById('network').value;
+            const instructionsDiv = document.getElementById('instructions');
+
+            if(!amount || !phone){
+                alert('Please enter your phone number and donation amount.');
+                return;
+            }
+
+            // LUWI Foundation numbers
+            const MTN_NUMBER = '0969852932';
+            const AIRTEL_NUMBER = '0972308641';
+            let targetNumber = network === 'MTN' ? MTN_NUMBER : AIRTEL_NUMBER;
+
+            // Generate instructions
+            instructionsDiv.style.display = 'block';
+            instructionsDiv.innerHTML = `
+                <h3>Donation Instructions</h3>
+                <p>To complete your donation of <strong>ZMW ${amount}</strong> via <strong>${network}</strong>:</p>
+                <ol>
+                    <li>Open your ${network} Mobile Money menu on your phone.</li>
+                    <li>Select <strong>Send Money / Pay Bill</strong>.</li>
+                    <li>Enter LUWI Foundation's number: <strong>${targetNumber}</strong>.</li>
+                    <li>Enter your donation amount: <strong>ZMW ${amount}</strong>.</li>
+                    <li>Confirm the transaction.</li>
+                </ol>
+                <p>After sending, please send a WhatsApp message to <strong>+260969852932</strong> or email <a href="mailto:luwifoundationzambia@gmail.com">luwifoundationzambia@gmail.com</a> with your name, mobile number, and amount donated. We will acknowledge your contribution and provide a receipt.</p>
+                <p>Thank you for supporting LUWI Foundation!</p>
+            `;
+        }
+    </script>
 
 </body>
 </html>
