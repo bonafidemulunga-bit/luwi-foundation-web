@@ -1,167 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate to LUWI Foundation</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Donation form styling */
-        .donation-form {
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            max-width: 500px;
-            margin: 30px auto;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate to LUWI Foundation</title>
+<style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background:#f4f6f9; color:#333; margin:0; }
+    a { text-decoration:none; color:inherit; }
 
-        .donation-form label {
-            display: block;
-            margin: 10px 0 5px;
-            font-weight: bold;
-        }
+    /* Header */
+    header { background:#007BFF; padding:15px 20px; color:white; }
+    .header-container { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; }
+    .header-container img { height:40px; border-radius:5px; }
+    nav ul { display:flex; list-style:none; gap:15px; margin:0; padding:0; }
+    nav ul li a { color:white; font-weight:500; transition:0.3s; }
+    nav ul li a:hover { text-decoration:underline; }
 
-        .donation-form input, 
-        .donation-form select, 
-        .donation-form button {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
+    /* Main container */
+    .container { max-width:600px; margin:50px auto; background:#fff; padding:40px 30px; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.15); }
+    h1 { color:#007BFF; text-align:center; margin-bottom:25px; font-size:28px; }
+    p { text-align:center; margin-bottom:30px; font-size:16px; }
 
-        .donation-form button {
-            background-color: #f90FFC;
-            color: #fff;
-            font-weight: bold;
-            cursor: pointer;
-            border: none;
-            transition: background 0.3s;
-        }
+    /* Donation form */
+    .donation-form { display:flex; flex-direction:column; gap:15px; }
+    label { font-weight:bold; margin-bottom:5px; }
+    input, select, button { padding:12px; border-radius:6px; border:1px solid #ccc; font-size:16px; width:100%; box-sizing:border-box; }
+    input:focus, select:focus { border-color:#007BFF; outline:none; }
+    button { background:#007BFF; color:white; font-weight:bold; border:none; cursor:pointer; transition:0.3s; }
+    button:hover { background:#0056b3; }
 
-        .donation-form button:hover {
-            background-color: #e081e5;
-        }
+    /* Custom amount input initially hidden */
+    #customAmount { display:none; }
 
-        .donation-instructions {
-            background: #f5f5f5;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-            display: none;
-            font-size: 16px;
-        }
-
-        .donation-instructions h3 {
-            margin-top: 0;
-            color: #333;
-        }
-    </style>
+    /* Instructions */
+    .donation-instructions { background:#f5f5f5; padding:20px; border-radius:8px; margin-top:20px; font-size:16px; display:none; color:#333; }
+</style>
 </head>
 <body>
 
-    <!-- Consistent Header with Logo -->
-    <header class="main-header">
-        <div class="container header-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="logo.png" alt="LUWI Foundation Logo" />
-                </a>
-            </div>
-            <nav class="nav-links">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="programs.html">Programs</a></li>
-                    <li><a href="donate.html">Donate</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<!-- Header -->
+<header>
+  <div class="header-container">
+    <a href="index.html">
+      <img src="logo.png" alt="LUWI Foundation Logo">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-    <main class="container">
-        <h1>Support LUWI Foundation</h1>
-        <p>Use the form below to make a donation. Your contribution helps us empower students, organize impactful programs, and build brighter futures for young people across Zambia.</p>
+<main class="container">
+    <h1>Support LUWI Foundation</h1>
+    <p>Your donation helps empower students, organize impactful programs, and build brighter futures across Zambia.</p>
 
-        <!-- Donation Form -->
-        <div class="donation-form">
-            <label for="amount">Donation Amount (ZMW)</label>
-            <select id="amount">
-                <option value="50">50</option>
-                <option value="100">100</option>
-                <option value="200">200</option>
-                <option value="500">500</option>
-                <option value="custom">Custom Amount</option>
-            </select>
+    <!-- Donation Form -->
+    <div class="donation-form">
+        <label for="amount">Donation Amount (ZMW)</label>
+        <select id="amount">
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="500">500</option>
+            <option value="custom">Custom Amount</option>
+        </select>
 
-            <input type="number" id="customAmount" placeholder="Enter custom amount" style="display:none;">
+        <input type="number" id="customAmount" placeholder="Enter custom amount">
 
-            <label for="phone">Your Mobile Number</label>
-            <input type="tel" id="phone" placeholder="e.g. 096XXXXXXX" required>
+        <label for="phone">Your Mobile Number</label>
+        <input type="tel" id="phone" placeholder="e.g. 096XXXXXXX" required>
 
-            <label for="network">Select Mobile Network</label>
-            <select id="network">
-                <option value="MTN">MTN Mobile Money</option>
-                <option value="Airtel">Airtel Money</option>
-            </select>
+        <label for="network">Select Mobile Network</label>
+        <select id="network">
+            <option value="MTN">MTN Mobile Money</option>
+            <option value="Airtel">Airtel Money</option>
+        </select>
 
-            <button onclick="generateInstructions()">Donate</button>
+        <button onclick="generateInstructions()">Donate</button>
 
-            <!-- Instructions Output -->
-            <div class="donation-instructions" id="instructions"></div>
-        </div>
-    </main>
+        <!-- Instructions -->
+        <div class="donation-instructions" id="instructions"></div>
+    </div>
+</main>
 
-    <script>
-        const amountSelect = document.getElementById('amount');
-        const customAmount = document.getElementById('customAmount');
+<script>
+    const amountSelect = document.getElementById('amount');
+    const customAmount = document.getElementById('customAmount');
 
-        // Show/hide custom amount input
-        amountSelect.addEventListener('change', () => {
-            if(amountSelect.value === 'custom'){
-                customAmount.style.display = 'block';
-            } else {
-                customAmount.style.display = 'none';
-            }
-        });
-
-        function generateInstructions(){
-            let amount = amountSelect.value === 'custom' ? customAmount.value : amountSelect.value;
-            const phone = document.getElementById('phone').value.trim();
-            const network = document.getElementById('network').value;
-            const instructionsDiv = document.getElementById('instructions');
-
-            if(!amount || !phone){
-                alert('Please enter your phone number and donation amount.');
-                return;
-            }
-
-            // LUWI Foundation numbers
-            const MTN_NUMBER = '0969852932';
-            const AIRTEL_NUMBER = '0972308641';
-            let targetNumber = network === 'MTN' ? MTN_NUMBER : AIRTEL_NUMBER;
-
-            // Generate instructions dynamically
-            instructionsDiv.style.display = 'block';
-            instructionsDiv.innerHTML = `
-                <h3>Donation Instructions</h3>
-                <p>To complete your donation of <strong>ZMW ${amount}</strong> via <strong>${network}</strong>:</p>
-                <ol>
-                    <li>Open your ${network} Mobile Money menu on your phone.</li>
-                    <li>Select <strong>Send Money / Pay Bill</strong>.</li>
-                    <li>Enter LUWI Foundation's number: <strong>${targetNumber}</strong>.</li>
-                    <li>Enter the donation amount: <strong>ZMW ${amount}</strong>.</li>
-                    <li>Confirm the transaction and complete the payment.</li>
-                </ol>
-                <p>After sending, please send a WhatsApp message to <strong>+260969852932</strong> or email <a href="mailto:luwifoundationzambia@gmail.com">luwifoundationzambia@gmail.com</a> with your name, mobile number, and amount donated. We will acknowledge your contribution and provide a receipt.</p>
-                <p>Thank you for supporting LUWI Foundation!</p>
-            `;
+    // Show/hide custom amount input
+    amountSelect.addEventListener('change', () => {
+        if(amountSelect.value === 'custom'){
+            customAmount.style.display = 'block';
+        } else {
+            customAmount.style.display = 'none';
         }
-    </script>
+    });
+
+    function generateInstructions(){
+        let amount = amountSelect.value === 'custom' ? customAmount.value : amountSelect.value;
+        const phone = document.getElementById('phone').value.trim();
+        const network = document.getElementById('network').value;
+        const instructionsDiv = document.getElementById('instructions');
+
+        if(!amount || !phone){
+            alert('Please enter your phone number and donation amount.');
+            return;
+        }
+
+        instructionsDiv.style.display = 'block';
+        instructionsDiv.innerHTML = `
+            <h3>Donation Instructions</h3>
+            <p>Please send <strong>ZMW ${amount}</strong> directly via <strong>${network}</strong> using the "Send Money" option.</p>
+            <p>When sending, the recipient name will appear as <strong>Bonafidem</strong>. Ensure you use your mobile number entered above.</p>
+            <p>Thank you for supporting LUWI Foundation!</p>
+        `;
+    }
+</script>
 
 </body>
-    </html>
+</html>
