@@ -113,6 +113,48 @@
             color: #333;
         }
 
+        /* PROGRAMS & ACTIVITIES */
+        .programs-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .programs-section h2 {
+            text-align: center;
+            color: #1E90FF;
+            margin-bottom: 40px;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .program-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .program-box:hover {
+            transform: translateY(-8px);
+        }
+
+        .program-box h3 {
+            color: #f90FFC;
+            margin-bottom: 15px;
+        }
+
+        .program-box p {
+            color: #333;
+            line-height: 1.6;
+        }
+
         /* RESPONSIVE */
         @media(max-width: 900px){
             .mission-vision {
@@ -136,6 +178,7 @@
     </nav>
 </header>
 
+<!-- HERO -->
 <section class="about-hero">
     <h1>About LUWI Foundation</h1>
     <p>
@@ -145,6 +188,7 @@
     </p>
 </section>
 
+<!-- MISSION & VISION -->
 <section class="mission-vision">
     <div class="mission-box">
         <h2>Our Mission</h2>
@@ -162,6 +206,7 @@
     </div>
 </section>
 
+<!-- FOUNDER SECTION -->
 <section class="founder-section">
     <h2>Meet Our Founder</h2>
     <p>
@@ -172,162 +217,43 @@
     </p>
 </section>
 
-</body>
-</html>            margin: auto;
-            line-height: 1.8;
-        }
+<!-- PROGRAMS & ACTIVITIES -->
+<section class="programs-section">
+    <h2>Our Programs & Activities</h2>
+    <div class="programs-grid">
+        
+        <div class="program-box">
+            <h3>Education Support</h3>
+            <p>Providing scholarships, school supplies, and learning materials to underprivileged children to ensure access to quality education.</p>
+        </div>
 
-        /* CORE VALUES */
-        .values {
-            padding: 60px 20px;
-            background: #f4f6f9;
-            text-align: center;
-        }
+        <div class="program-box">
+            <h3>Healthcare & Nutrition</h3>
+            <p>Organizing medical camps, health education, and providing nutritious meals to improve community health and well-being.</p>
+        </div>
 
-        .values h2 {
-            color: #1E90FF;
-            margin-bottom: 40px;
-        }
+        <div class="program-box">
+            <h3>Emergency Relief</h3>
+            <p>Responding to natural disasters and crises with food, clothing, shelter, and immediate assistance to affected families.</p>
+        </div>
 
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: auto;
-        }
+        <div class="program-box">
+            <h3>Youth & Community Empowerment</h3>
+            <p>Running workshops, skill-building programs, and mentorship initiatives to help youth become self-reliant and active citizens.</p>
+        </div>
 
-        .value-box {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
+        <div class="program-box">
+            <h3>Women & Child Welfare</h3>
+            <p>Supporting women and children through advocacy, safe spaces, and programs that promote health, education, and rights.</p>
+        </div>
 
-        /* CTA */
-        .about-cta {
-            background: #f90FFC;
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
+        <div class="program-box">
+            <h3>Environmental Sustainability</h3>
+            <p>Engaging communities in tree planting, clean-up drives, and awareness campaigns to protect the environment for future generations.</p>
+        </div>
 
-        .about-cta a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
-            background: white;
-            color: #f90FFC;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        .about-cta a:hover {
-            background: #eee;
-        }
-
-        /* FOOTER */
-        footer { 
-            text-align: center; 
-            background: #f90FFC; 
-            color: #fff; 
-            padding: 20px; 
-            margin-top: 40px;
-        }
-
-        /* RESPONSIVE */
-        @media(max-width: 768px){
-            .mission-vision {
-                grid-template-columns: 1fr;
-            }
-        }
-
-    </style>
-</head>
-
-<body>
-
-<header>
-    <img src="images/logo.png" class="logo" alt="LUWI Logo">
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="programs.html">Programs</a></li>
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
-<section class="about-hero">
-    <h1>About LUWI Foundation</h1>
-    <p>
-        LUWI Foundation is dedicated to transforming lives through education support,
-        community empowerment, and sustainable development initiatives.
-    </p>
-</section>
-
-<section class="mission-vision">
-    <div class="mission-box">
-        <h2>Our Mission</h2>
-        <p>
-            To provide educational support, scholarships, and essential resources to
-            vulnerable children and youth in Zambia, empowering them to build brighter futures.
-        </p>
-    </div>
-
-    <div class="vision-box">
-        <h2>Our Vision</h2>
-        <p>
-            A Zambia where every child has equal access to quality education,
-            opportunity, and the tools needed to succeed in life.
-        </p>
     </div>
 </section>
-
-<section class="founder-section">
-    <h2>Founder’s Story</h2>
-    <p>
-        LUWI Foundation was founded with a passion to support vulnerable children
-        who struggle to access education due to financial hardship. The foundation
-        believes that education is the key to breaking the cycle of poverty and
-        creating sustainable change in communities.
-    </p>
-</section>
-
-<section class="values">
-    <h2>Our Core Values</h2>
-    <div class="values-grid">
-        <div class="value-box">
-            <h3>Integrity</h3>
-            <p>We operate with transparency and accountability.</p>
-        </div>
-        <div class="value-box">
-            <h3>Compassion</h3>
-            <p>We serve with empathy and genuine care.</p>
-        </div>
-        <div class="value-box">
-            <h3>Empowerment</h3>
-            <p>We equip individuals to create lasting change.</p>
-        </div>
-        <div class="value-box">
-            <h3>Community</h3>
-            <p>We believe in collaboration and unity.</p>
-        </div>
-    </div>
-</section>
-
-<section class="about-cta">
-    <h2>Join Us in Making a Difference</h2>
-    <p>Your support can change a child’s future.</p>
-    <a href="donate.html">Donate Now</a>
-</section>
-
-<footer>
-    <p>© 2026 LUWI Foundation | All Rights Reserved</p>
-</footer>
 
 </body>
 </html>
