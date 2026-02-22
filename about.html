@@ -3,90 +3,186 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About LUWI Foundation Zambia</title>
-<link rel="stylesheet" href="style.css">
+<title>About Us - LUWI Foundation</title>
+<style>
+  /* Reset & Base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f0f2f5;
+    color: #333;
+  }
+  a { text-decoration: none; color: inherit; }
+
+  /* Container */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .header h1 {
+    color: #f90FFC;
+    font-size: 38px;
+    margin-bottom: 10px;
+  }
+  .header p {
+    font-size: 18px;
+    color: #555;
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: 50px;
+  }
+  .section h2 {
+    color: #f90FFC;
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f90FFC;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  .section p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+
+  /* Highlights / Stats */
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  .stat {
+    background: #fff;
+    flex: 1 1 200px;
+    margin: 10px;
+    padding: 25px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+  }
+  .stat:hover { transform: translateY(-5px); }
+  .stat h3 {
+    color: #f90FFC;
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  .stat p { font-size: 16px; color: #555; }
+
+  /* Image section */
+  .about-image {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .about-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  }
+
+  /* Call to action */
+  .cta {
+    background: #f90FFC;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  .cta h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  .cta a {
+    display: inline-block;
+    background: #fff;
+    color: #f90FFC;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .cta a:hover {
+    background: #ffe6ff;
+  }
+
+  @media (max-width: 768px) {
+    .stats { flex-direction: column; align-items: center; }
+  }
+</style>
 </head>
 <body>
 
-<header>
-    <img src="images/logo.png" alt="LUWI Foundation Logo" class="logo">
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="programs.html">Programs</a></li>
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <h1>About LUWI Foundation</h1>
+    <p>Empowering students and communities in Zambia through education, awareness, and support programs.</p>
+  </div>
 
-<!-- EXECUTIVE SUMMARY -->
-<section class="section-light">
-    <div class="content-container">
-        <h2>About LUWI Foundation Zambia</h2>
-        <div class="executive-summary">
-            <h3>Executive Summary</h3>
-            <p>
-                LUWI Foundation Zambia is a non-profit organization dedicated to empowering students and communities across Zambia. 
-                We focus on education, healthcare, social empowerment, and emergency relief programs, reaching thousands of learners annually. 
-                Our mission is to create safe and supportive environments for students to thrive academically, socially, and creatively.
-            </p>
-            <p>
-                Since our inception, we have partnered with schools, universities, and local organizations to implement awareness programs, 
-                scholarships, counseling services, and talent development initiatives. Our efforts have impacted over 1,000 students so far, 
-                and we continue to expand our reach with every program and partnership.
-            </p>
-        </div>
+  <!-- Our Mission -->
+  <div class="section">
+    <h2>Our Mission</h2>
+    <p>LUWI Foundation is dedicated to creating awareness, providing educational support, and uplifting vulnerable students across Zambia. We focus on fostering an inclusive environment for learning, personal growth, and empowerment.</p>
+  </div>
+
+  <!-- What We Do -->
+  <div class="section">
+    <h2>What We Do</h2>
+    <p>Through workshops, school visits, and community programs, LUWI Foundation reaches hundreds of students every year. We partner with schools, universities, and organizations to deliver impactful sessions on education, health, and social awareness.</p>
+    <p>Our programs tackle real student struggles such as financial limitations, mental health challenges, and lack of access to critical resources. By engaging with pupils, college, and university students directly, we provide practical guidance and mentorship.</p>
+  </div>
+
+  <!-- Impact Stats -->
+  <div class="section">
+    <h2>Our Impact</h2>
+    <div class="stats">
+      <div class="stat">
+        <h3>1000+</h3>
+        <p>Students reached</p>
+      </div>
+      <div class="stat">
+        <h3>50+</h3>
+        <p>Schools visited</p>
+      </div>
+      <div class="stat">
+        <h3>3</h3>
+        <p>Partnerships formed</p>
+      </div>
+      <div class="stat">
+        <h3>100+</h3>
+        <p>Events organized</p>
+      </div>
     </div>
-</section>
+  </div>
 
-<!-- DETAILED ABOUT CONTENT -->
-<section class="section-light">
-    <div class="content-container">
-        <h3>Our Mission</h3>
-        <p>
-            LUWI Foundation Zambia is committed to empowering students and communities in Zambia through education, healthcare, emergency relief, 
-            and social empowerment. We believe every student deserves a safe and supportive environment to grow academically, socially, and creatively.
-        </p>
+  <!-- Visual Image -->
+  <div class="about-image">
+    <img src="https://via.placeholder.com/900x400.png?text=LUWI+Foundation+Awareness+Programs" alt="LUWI Foundation Awareness Programs">
+  </div>
 
-        <h3>Our Vision</h3>
-        <p>
-            A Zambia where all students have access to education, guidance, and resources needed to unlock their potential and contribute positively 
-            to their communities.
-        </p>
-
-        <h3>Our Programs & Achievements</h3>
-        <ul>
-            <li>Student Mental Health & Counseling</li>
-            <li>Gender-Based Violence (GBV) Prevention</li>
-            <li>Educational Support & Scholarships</li>
-            <li>Emergency Relief & Crisis Response</li>
-            <li>Talent & Entrepreneurship Development</li>
-            <li>Women & Child Welfare Programs</li>
-            <li>Environmental Sustainability Initiatives</li>
-        </ul>
-        <p>
-            Through these initiatives, we have reached thousands of students and community members. Students have testified on the impact of our programs, 
-            and we continue to form partnerships with institutions such as the Zambian Royal Medical University and the Intersex Society of Zambia.
-        </p>
-
-        <h3>Get Involved</h3>
-        <p>
-            Join us in our mission to transform lives. Whether through donations, volunteering, or spreading awareness, every action makes a difference. 
-            Together, we can empower students and communities to achieve their full potential.
-        </p>
-        <a href="donate.html" class="btn">Support Our Mission</a>
-        <a href="programs.html" class="btn">Explore Our Programs</a>
-    </div>
-</section>
-
-<footer>
-    <p>© 2026 LUWI Foundation Zambia. All rights reserved.</p>
-    <p>
-        <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
-    </p>
-</footer>
+  <!-- Call to Action -->
+  <div class="cta">
+    <h2>Join Us in Making a Difference</h2>
+    <p>Your support helps us reach more students and expand our programs. Together, we can empower the next generation.</p>
+    <a href="donate.html">Donate Now</a>
+  </div>
+</div>
 
 </body>
 </html>
