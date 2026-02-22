@@ -5,96 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Donate - LUWI Foundation</title>
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #f0f2f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-  }
+  body { font-family: Arial, sans-serif; background:#f0f2f5; color:#333; margin:0; }
+  a { text-decoration:none; color:inherit; }
 
-  .donation-container {
-    background: #fff;
-    padding: 40px 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    max-width: 450px;
-    width: 100%;
-    text-align: center;
-  }
+  /* Header */
+  header { background:#007BFF; padding:15px 20px; color:white; }
+  header div { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; }
+  header h1 { font-size:24px; }
+  header nav a { color:white; margin:0 10px; transition:0.3s; }
+  header nav a:hover { text-decoration:underline; }
 
-  .donation-container h2 {
-    color: #f90FFC;
-    margin-bottom: 25px;
-  }
+  /* Container */
+  .container { max-width:450px; margin:50px auto; background:#fff; padding:40px 30px; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.15); text-align:center; }
 
-  .amount-options {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+  .container h2 { color:#007BFF; margin-bottom:25px; }
 
-  .amount-options button {
-    flex: 1 1 30%;
-    padding: 12px 0;
-    font-size: 16px;
-    border: 2px solid #f90FFC;
-    background: #fff;
-    color: #f90FFC;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
+  .amount-options { display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:20px; }
+  .amount-options button { flex:1 1 30%; padding:12px 0; font-size:16px; border:2px solid #007BFF; background:#fff; color:#007BFF; border-radius:8px; cursor:pointer; transition:0.3s; }
+  .amount-options button:hover, .amount-options button.active { background:#007BFF; color:#fff; }
 
-  .amount-options button:hover,
-  .amount-options button.active {
-    background: #f90FFC;
-    color: #fff;
-  }
+  input[type="number"], input[type="tel"] { width:100%; padding:12px; margin-bottom:15px; border-radius:8px; border:1px solid #ccc; font-size:16px; }
 
-  .custom-amount {
-    margin-bottom: 20px;
-  }
+  button#donateBtn { width:100%; padding:15px; font-size:18px; border:none; border-radius:8px; background:#007BFF; color:#fff; cursor:pointer; transition:0.3s; }
+  button#donateBtn:hover { background:#0056b3; }
 
-  input[type="number"], input[type="tel"] {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-  }
-
-  button#donateBtn {
-    background: #f90FFC;
-    color: #fff;
-    border: none;
-    padding: 15px;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    transition: 0.3s;
-  }
-
-  button#donateBtn:hover {
-    background: #e07bff;
-  }
-
-  .note {
-    font-size: 14px;
-    color: #555;
-    margin-top: 15px;
-  }
+  .note { font-size:14px; color:#555; margin-top:15px; }
 </style>
 </head>
 <body>
 
-<div class="donation-container">
+<!-- Header -->
+<header>
+  <div>
+    <h1>LUWI Foundation</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="about.html">About</a>
+      <a href="donate.html">Donate</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
   <h2>Support LUWI Foundation</h2>
 
   <div class="amount-options">
@@ -104,14 +58,10 @@
     <button onclick="selectAmount(this)" data-amount="100">100 ZMW</button>
   </div>
 
-  <div class="custom-amount">
-    <input type="number" id="customAmount" placeholder="Or enter custom amount (ZMW)" oninput="clearActiveButtons()">
-  </div>
-
+  <input type="number" id="customAmount" placeholder="Or enter custom amount (ZMW)" oninput="clearActiveButtons()">
   <input type="tel" id="mobile" placeholder="Enter Mobile Money Number" required>
 
   <button id="donateBtn" onclick="processDonation()">Donate Now</button>
-
   <p class="note">Your donation is safe and secure. You will receive a confirmation after payment.</p>
 </div>
 
@@ -119,12 +69,9 @@
   let selectedAmount = null;
 
   function selectAmount(button) {
-    // Remove active from all buttons
     document.querySelectorAll('.amount-options button').forEach(btn => btn.classList.remove('active'));
-    // Set active button
     button.classList.add('active');
     selectedAmount = button.getAttribute('data-amount');
-    // Clear custom input
     document.getElementById('customAmount').value = '';
   }
 
@@ -137,20 +84,12 @@
     let amount = selectedAmount || document.getElementById('customAmount').value;
     const mobile = document.getElementById('mobile').value.trim();
 
-    if (!amount || amount <= 0) {
-      alert('Please select or enter a valid donation amount.');
-      return;
-    }
-    if (!mobile) {
-      alert('Please enter your mobile money number.');
-      return;
-    }
+    if (!amount || amount <= 0) { alert('Please select or enter a valid donation amount.'); return; }
+    if (!mobile) { alert('Please enter your mobile money number.'); return; }
 
     const pin = prompt(`You are about to donate ZMW ${amount} from ${mobile}.\nPlease enter your mobile money PIN to confirm:`);
-    
     if (pin) {
       alert(`Thank you! Your donation of ZMW ${amount} has been successfully received.`);
-      // Reset form
       selectedAmount = null;
       document.getElementById('customAmount').value = '';
       document.getElementById('mobile').value = '';
