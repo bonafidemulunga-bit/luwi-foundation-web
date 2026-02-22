@@ -112,6 +112,27 @@ nav ul li a:hover {
 }
 
 /* ============================= */
+/* EXECUTIVE SUMMARY */
+/* ============================= */
+.executive-summary {
+    background: #f9f0ff;
+    padding: 25px 20px;
+    border-left: 5px solid #c400cc;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.executive-summary h3 {
+    color: #c400cc;
+    margin-bottom: 15px;
+}
+
+.executive-summary p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* ============================= */
 /* BUTTONS */
 /* ============================= */
 .btn {
@@ -159,6 +180,11 @@ section {
 h2 {
     color: #1E90FF;
     margin-bottom: 20px;
+}
+
+h3 {
+    color: #1E90FF;
+    margin-bottom: 15px;
 }
 
 ul {
