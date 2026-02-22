@@ -1,172 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUWI Foundation - Home</title>
-    <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            line-height: 1.6; 
-            background: #f9f9f9; 
-        }
-        header { 
-            background: #f90FFC; 
-            color: #fff; 
-            padding: 10px 20px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: space-between; 
-        }
-        nav ul { 
-            list-style: none; 
-            display: flex; 
-            gap: 15px; 
-        }
-        nav ul li a { 
-            color: #fff; 
-            text-decoration: none; 
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: background 0.3s ease;
-        }
-        nav ul li a:hover {
-            background: rgba(255,255,255,0.2);
-        }
-        .logo { 
-            height: 50px; 
-        }
-        .hero { 
-            position: relative; 
-            text-align: center; 
-        }
-        .hero img { 
-            width: 100%; 
-            height: auto; 
-        }
-        .hero-text { 
-            position: absolute; 
-            top: 40%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            color: #fff; 
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        .hero-text h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        .btn { 
-            background: #ff6347; 
-            color: #fff; 
-            padding: 10px 20px; 
-            text-decoration: none; 
-            border-radius: 5px;
-            display: inline-block;
-            margin: 10px 0;
-            transition: background 0.3s ease;
-        }
-        .btn:hover {
-            background: #ff4500;
-        }
-        section { 
-            padding: 40px 20px; 
-            text-align: center;
-        }
-        .about-preview {
-            background: #fff;
-        }
-        .about-preview h2 {
-            color: #1E90FF;
-        }
-        .testimonials {
-            background: #f0f0f0;
-        }
-        .testimonials h2 {
-            color: #1E90FF;
-        }
-        .testimonial-card {
-            background: white;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 400px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .testimonial-card img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        footer { 
-            text-align: center; 
-            background: #f90FFC; 
-            color: #fff; 
-            padding: 20px; 
-        }
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUWI Foundation - Home</title>
+
+<style>
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    line-height: 1.6; 
+    background: #f9f9f9; 
+}
+
+header { 
+    background: #f90FFC; 
+    color: #fff; 
+    padding: 10px 20px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+nav ul { 
+    list-style: none; 
+    display: flex; 
+    gap: 15px; 
+}
+
+nav ul li a { 
+    color: #fff; 
+    text-decoration: none; 
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.logo { height: 50px; }
+
+.hero { position: relative; text-align: center; }
+
+.hero img { width: 100%; height: auto; }
+
+.hero-text { 
+    position: absolute; 
+    top: 40%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: #fff; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-text h1 { font-size: 48px; margin-bottom: 20px; }
+
+.btn { 
+    background: #ff6347; 
+    color: #fff; 
+    padding: 10px 20px; 
+    text-decoration: none; 
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.btn:hover { background: #ff4500; }
+
+section { padding: 60px 20px; text-align: center; }
+
+.section-light { background: #ffffff; }
+.section-grey { background: #f0f0f0; }
+
+h2 { color: #1E90FF; }
+
+.content-container {
+    max-width: 1000px;
+    margin: auto;
+    text-align: left;
+}
+
+ul { line-height: 1.8; }
+
+footer { 
+    text-align: center; 
+    background: #f90FFC; 
+    color: #fff; 
+    padding: 20px; 
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover { text-decoration: underline; }
+
+</style>
 </head>
+
 <body>
-    <header>
-        <img src="images/logo.png" alt="LUWI Foundation Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <img src="images/hero.jpg" alt="LUWI Foundation helping communities">
-        <div class="hero-text">
-            <h1>LUWI Foundation</h1>
-            <p>Making a difference in Zambia and beyond</p>
-            <a href="donate.html" class="btn">Donate Now</a>
-        </div>
-    </section>
+<header>
+    <img src="images/logo.png" alt="LUWI Foundation Logo" class="logo">
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#support">Support</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <section class="about-preview">
-        <h2>About LUWI Foundation</h2>
-        <p>We are committed to education, health, and community development in Zambia and beyond.</p>
-        <a href="about.html" class="btn">Learn More</a>
-    </section>
+<section class="hero">
+    <img src="images/hero.jpg" alt="LUWI Foundation helping communities">
+    <div class="hero-text">
+        <h1>LUWI Foundation</h1>
+        <p>As long as a student is affected — we are there.</p>
+        <a href="donate.html" class="btn">Donate Now</a>
+    </div>
+</section>
 
-    <section class="testimonials">
-        <h2>Testimonials</h2>
-        <div class="testimonial-card">
-            <img src="images/student.jpg" alt="Student">
-            <h3>Student</h3>
-            <p>"LUWI Foundation changed my life by providing scholarships and mentorship."</p>
-        </div>
-    </section>
+<section id="about" class="section-light">
+<div class="content-container">
+<h2>About LUWI Foundation</h2>
 
-    <footer>
-        <p>© 2026 LUWI Foundation. All rights reserved.</p>
-        <p>
-            <a href="#">Facebook</a> | 
-            <a href="#">Instagram</a> | 
-            <a href="#">Twitter</a>
-        </p>
-    </footer>
-</body>
-</html>        <p>
-            <a href="#">Facebook</a> | 
-            <a href="#">Instagram</a> | 
-            <a href="#">Twitter</a>
-        </p>
-    </footer>
+<p>LUWI Foundation is a student-centered organization committed to creating safe, empowering, and inclusive learning environments for pupils and students in Zambia.</p>
+
+<p>We support learners facing academic pressure, mental health challenges, financial hardship, gender-based violence (GBV), menstrual hygiene challenges, disability barriers, early marriages, unwanted pregnancies, and exploitation.</p>
+
+<h3>Our Story</h3>
+
+<p>LUWI Foundation was born from personal struggle, resilience, and purpose. After excelling in Grade 12, the founder enrolled at university under a 100% government bursary scholarship. However, he was placed in a program that did not align with his passion.</p>
+
+<p>Facing emotional and academic challenges, he later pursued a Bachelor of Science in Nursing. Despite severe financial hardship — surviving on limited upkeep — he persevered.</p>
+
+<p>In his second year, a vision was born: to create a safe environment where no student feels unheard, unsupported, or forced to bury their talents.</p>
+
+<p>The name <strong>“LUWI”</strong> came from a dream and was later discovered to mean <strong>“God’s Mercy.”</strong> LUWI exists to be mercy, hope, and light for students stuck in darkness.</p>
+</div>
+</section>
+
+<section class="section-grey">
+<div class="content-container">
+<h2>What We Stand For</h2>
+
+<ul>
+<li>Mental Health Awareness</li>
+<li>Gender-Based Violence (GBV) Prevention</li>
+<li>Menstrual Hygiene Advocacy</li>
+<li>Disability Inclusion</li>
+<li>Early Marriage & Unwanted Pregnancy Awareness</li>
+<li>Student Financial Support</li>
+<li>Talent & Entrepreneurship Development</li>
+</ul>
+</div>
+</section>
+
+<section id="vision" class="section-light">
+<div class="content-container">
+<h2>Our Vision for the Near Future</h2>
+
+<ul>
+<li>Establish Safe Student Support Hubs</li>
+<li>Launch LUWI Scholarship & Emergency Fund</li>
+<li>Partner with Schools & Universities</li>
+<li>Create Talent & Innovation Incubation Programs</li>
+<li>Build a Model School & University</li>
+<li>Achieve Financial Sustainability</li>
+</ul>
+
+<p><strong>Our Mission:</strong> To support, empower, and nurture students through mentorship, academic assistance, awareness programs, and safe spaces.</p>
+
+<p><strong>Our Vision:</strong> To create a safe, empowering, and affordable educational ecosystem in Zambia where every student thrives academically, emotionally, socially, and creatively.</p>
+
+</div>
+</section>
+
+<section id="support" class="section-grey">
+<div class="content-container" style="text-align:center;">
+<h2>Support LUWI Foundation</h2>
+<p>When you support LUWI, you are shaping future generations and nurturing Zambia’s next leaders.</p>
+<a href="donate.html" class="btn">Donate Now</a>
+</div>
+</section>
+
+<footer>
+<p>© 2026 LUWI Foundation. All rights reserved.</p>
+<p>
+<a href="#">Facebook</a> | 
+<a href="#">Instagram</a> | 
+<a href="#">Twitter</a>
+</p>
+</footer>
+
 </body>
 </html>
