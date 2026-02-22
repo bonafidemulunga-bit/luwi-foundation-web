@@ -6,12 +6,14 @@
 <title>LUWI Foundation - Home</title>
 
 <style>
+/* BASIC STYLES */
 body { 
     font-family: Arial, sans-serif; 
     margin: 0; 
     padding: 0; 
     line-height: 1.6; 
     background: #f9f9f9; 
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 header { 
@@ -21,12 +23,16 @@ header {
     display: flex; 
     align-items: center; 
     justify-content: space-between; 
+    position: sticky; /* Sticks on top */
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul { 
     list-style: none; 
     display: flex; 
     gap: 15px; 
+    margin: 0;
 }
 
 nav ul li a { 
@@ -43,10 +49,9 @@ nav ul li a:hover {
 
 .logo { height: 50px; }
 
+/* HERO */
 .hero { position: relative; text-align: center; }
-
 .hero img { width: 100%; height: auto; }
-
 .hero-text { 
     position: absolute; 
     top: 40%; 
@@ -55,9 +60,7 @@ nav ul li a:hover {
     color: #fff; 
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
-
 .hero-text h1 { font-size: 48px; margin-bottom: 20px; }
-
 .btn { 
     background: #ff6347; 
     color: #fff; 
@@ -67,39 +70,44 @@ nav ul li a:hover {
     display: inline-block;
     margin-top: 15px;
 }
-
 .btn:hover { background: #ff4500; }
 
+/* SECTIONS */
 section { padding: 60px 20px; text-align: center; }
-
 .section-light { background: #ffffff; }
 .section-grey { background: #f0f0f0; }
-
 h2 { color: #1E90FF; }
-
-.content-container {
-    max-width: 1000px;
-    margin: auto;
-    text-align: left;
-}
-
+.content-container { max-width: 1000px; margin: auto; text-align: left; }
 ul { line-height: 1.8; }
 
-footer { 
-    text-align: center; 
-    background: #f90FFC; 
-    color: #fff; 
-    padding: 20px; 
+/* PROGRAMS SECTION */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
 }
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
+.program-box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: 0.3s ease;
 }
+.program-box:hover { transform: translateY(-5px); }
+.program-box h3 { color: #f90FFC; margin-bottom: 15px; }
+.program-box p { line-height: 1.6; }
 
+/* FOOTER */
+footer { text-align: center; background: #f90FFC; color: #fff; padding: 20px; }
+footer a { color: #fff; text-decoration: none; margin: 0 10px; }
 footer a:hover { text-decoration: underline; }
 
+/* RESPONSIVE */
+@media(max-width: 900px){
+    .content-container { text-align: center; }
+}
 </style>
 </head>
 
@@ -111,60 +119,38 @@ footer a:hover { text-decoration: underline; }
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#vision">Vision</a></li>
+            <li><a href="#programs">Programs</a></li>
             <li><a href="#support">Support</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 </header>
 
-<section class="hero">
+<!-- HERO -->
+<section id="hero" class="hero">
     <img src="images/hero.jpg" alt="LUWI Foundation helping communities">
     <div class="hero-text">
         <h1>LUWI Foundation</h1>
         <p>As long as a student is affected — we are there.</p>
-        <a href="donate.html" class="btn">Donate Now</a>
+        <a href="#support" class="btn">Donate Now</a>
     </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about" class="section-light">
 <div class="content-container">
 <h2>About LUWI Foundation</h2>
-
 <p>LUWI Foundation is a student-centered organization committed to creating safe, empowering, and inclusive learning environments for pupils and students in Zambia.</p>
-
 <p>We support learners facing academic pressure, mental health challenges, financial hardship, gender-based violence (GBV), menstrual hygiene challenges, disability barriers, early marriages, unwanted pregnancies, and exploitation.</p>
-
 <h3>Our Story</h3>
-
-<p>LUWI Foundation was born from personal struggle, resilience, and purpose. After excelling in Grade 12, the founder enrolled at university under a 100% government bursary scholarship. However, he was placed in a program that did not align with his passion.</p>
-
-<p>Facing emotional and academic challenges, he later pursued a Bachelor of Science in Nursing. Despite severe financial hardship — surviving on limited upkeep — he persevered.</p>
-
-<p>In his second year, a vision was born: to create a safe environment where no student feels unheard, unsupported, or forced to bury their talents.</p>
-
-<p>The name <strong>“LUWI”</strong> came from a dream and was later discovered to mean <strong>“God’s Mercy.”</strong> LUWI exists to be mercy, hope, and light for students stuck in darkness.</p>
+<p>LUWI Foundation was born from personal struggle, resilience, and purpose...</p>
 </div>
 </section>
 
-<section class="section-grey">
+<!-- VISION -->
+<section id="vision" class="section-grey">
 <div class="content-container">
-<h2>What We Stand For</h2>
-
-<ul>
-<li>Mental Health Awareness</li>
-<li>Gender-Based Violence (GBV) Prevention</li>
-<li>Menstrual Hygiene Advocacy</li>
-<li>Disability Inclusion</li>
-<li>Early Marriage & Unwanted Pregnancy Awareness</li>
-<li>Student Financial Support</li>
-<li>Talent & Entrepreneurship Development</li>
-</ul>
-</div>
-</section>
-
-<section id="vision" class="section-light">
-<div class="content-container">
-<h2>Our Vision for the Near Future</h2>
-
+<h2>Our Vision & Mission</h2>
 <ul>
 <li>Establish Safe Student Support Hubs</li>
 <li>Launch LUWI Scholarship & Emergency Fund</li>
@@ -173,22 +159,64 @@ footer a:hover { text-decoration: underline; }
 <li>Build a Model School & University</li>
 <li>Achieve Financial Sustainability</li>
 </ul>
-
-<p><strong>Our Mission:</strong> To support, empower, and nurture students through mentorship, academic assistance, awareness programs, and safe spaces.</p>
-
-<p><strong>Our Vision:</strong> To create a safe, empowering, and affordable educational ecosystem in Zambia where every student thrives academically, emotionally, socially, and creatively.</p>
-
+<p><strong>Mission:</strong> Support, empower, and nurture students through mentorship, academic assistance, awareness programs, and safe spaces.</p>
+<p><strong>Vision:</strong> A safe, empowering, and affordable educational ecosystem in Zambia where every student thrives.</p>
 </div>
 </section>
 
+<!-- PROGRAMS -->
+<section id="programs" class="section-light">
+<div class="content-container">
+<h2>Our Programs & Activities</h2>
+<div class="programs-grid">
+    <div class="program-box">
+        <h3>Education Support</h3>
+        <p>Scholarships, school supplies, and learning materials for underprivileged children.</p>
+    </div>
+    <div class="program-box">
+        <h3>Healthcare & Nutrition</h3>
+        <p>Medical camps, health education, and nutritious meals for community well-being.</p>
+    </div>
+    <div class="program-box">
+        <h3>Emergency Relief</h3>
+        <p>Food, clothing, shelter, and immediate aid for disaster-affected families.</p>
+    </div>
+    <div class="program-box">
+        <h3>Youth & Community Empowerment</h3>
+        <p>Workshops, skill-building, and mentorship to help youth become self-reliant.</p>
+    </div>
+    <div class="program-box">
+        <h3>Women & Child Welfare</h3>
+        <p>Advocacy, safe spaces, and programs that support health, education, and rights.</p>
+    </div>
+    <div class="program-box">
+        <h3>Environmental Sustainability</h3>
+        <p>Tree planting, clean-ups, and awareness campaigns to protect the environment.</p>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- SUPPORT -->
 <section id="support" class="section-grey">
-<div class="content-container" style="text-align:center;">
+<div class="content-container">
 <h2>Support LUWI Foundation</h2>
-<p>When you support LUWI, you are shaping future generations and nurturing Zambia’s next leaders.</p>
-<a href="donate.html" class="btn">Donate Now</a>
+<p>Shape future generations by supporting LUWI Foundation.</p>
+<a href="#contact" class="btn">Contact / Donate</a>
 </div>
 </section>
 
+<!-- CONTACT -->
+<section id="contact" class="section-light">
+<div class="content-container">
+<h2>Contact Us</h2>
+<p>Email: info@luwifoundation.org</p>
+<p>Phone: +260 123 456 789</p>
+<p>Address: Lusaka, Zambia</p>
+</div>
+</section>
+
+<!-- FOOTER -->
 <footer>
 <p>© 2026 LUWI Foundation. All rights reserved.</p>
 <p>
