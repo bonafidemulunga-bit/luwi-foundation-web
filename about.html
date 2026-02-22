@@ -1,259 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About LUWI Foundation</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f4f6f9;
-        }
-
-        /* HEADER */
-        header { 
-            background: #f90FFC; 
-            color: #fff; 
-            padding: 10px 20px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: space-between; 
-        }
-
-        nav ul { 
-            list-style: none; 
-            display: flex; 
-            gap: 15px; 
-            margin: 0;
-        }
-
-        nav ul li a { 
-            color: #fff; 
-            text-decoration: none; 
-            padding: 6px 12px;
-            border-radius: 4px;
-            transition: 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            background: rgba(255,255,255,0.2);
-        }
-
-        .logo { 
-            height: 50px; 
-        }
-
-        /* HERO */
-        .about-hero {
-            background: linear-gradient(135deg, #1E90FF, #1873cc);
-            color: white;
-            text-align: center;
-            padding: 90px 20px;
-        }
-
-        .about-hero h1 {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
-
-        .about-hero p {
-            font-size: 18px;
-            max-width: 800px;
-            margin: auto;
-            line-height: 1.8;
-        }
-
-        /* MISSION & VISION */
-        .mission-vision {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            max-width: 1100px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        .mission-box, .vision-box {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: 0.3s ease;
-        }
-
-        .mission-box:hover, .vision-box:hover {
-            transform: translateY(-8px);
-        }
-
-        .mission-box h2, .vision-box h2 {
-            color: #f90FFC;
-            margin-bottom: 20px;
-        }
-
-        /* FOUNDER SECTION */
-        .founder-section {
-            background: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .founder-section h2 {
-            color: #1E90FF;
-            margin-bottom: 20px;
-        }
-
-        .founder-section p {
-            max-width: 900px;
-            margin: auto;
-            line-height: 1.7;
-            color: #333;
-        }
-
-        /* PROGRAMS & ACTIVITIES */
-        .programs-section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .programs-section h2 {
-            text-align: center;
-            color: #1E90FF;
-            margin-bottom: 40px;
-        }
-
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .program-box {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: 0.3s ease;
-        }
-
-        .program-box:hover {
-            transform: translateY(-8px);
-        }
-
-        .program-box h3 {
-            color: #f90FFC;
-            margin-bottom: 15px;
-        }
-
-        .program-box p {
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* RESPONSIVE */
-        @media(max-width: 900px){
-            .mission-vision {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About LUWI Foundation</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; background:#f9f9f9; }
+header { background:#f90FFC; color:#fff; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:1000; }
+nav ul { list-style:none; display:flex; gap:15px; margin:0; }
+nav ul li a { color:#fff; text-decoration:none; padding:5px 10px; border-radius:4px; transition:0.3s; }
+nav ul li a:hover { background: rgba(255,255,255,0.2); }
+.logo { height:50px; }
+section { padding:60px 20px; text-align:center; }
+.section-light { background:#ffffff; }
+.section-grey { background:#f0f0f0; }
+h2 { color:#1E90FF; }
+.content-container { max-width:1000px; margin:auto; text-align:left; }
+ul { line-height:1.8; }
+footer { text-align:center; background:#f90FFC; color:#fff; padding:20px; }
+footer a { color:#fff; text-decoration:none; margin:0 10px; }
+footer a:hover { text-decoration:underline; }
+</style>
 </head>
 <body>
 
 <header>
-    <img src="images/logo.png" alt="LUWI Foundation Logo" class="logo">
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+<img src="images/logo.png" alt="LUWI Foundation Logo" class="logo">
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="projects.html">Programs</a></li>
+<li><a href="donate.html">Donate</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
 </header>
 
-<!-- HERO -->
-<section class="about-hero">
-    <h1>About LUWI Foundation</h1>
-    <p>
-        LUWI Foundation is a non-profit organization dedicated to empowering vulnerable communities, promoting education, 
-        improving health, and providing relief in emergencies. Our mission is to create lasting change through innovative 
-        programs and compassionate service.
-    </p>
+<!-- ABOUT HERO -->
+<section class="section-light">
+<div class="content-container">
+<h2>About LUWI Foundation</h2>
+<p>LUWI Foundation is a non-profit organization committed to empowering students and vulnerable communities in Zambia through education, health, emergency relief, and social programs. Our goal is to create lasting impact by supporting learners and families in need.</p>
+
+<h3>Our Story</h3>
+<p>Founded by Bonafide Mulunga, LUWI Foundation was born from personal struggle and determination. After excelling in Grade 12, Bonafide received a full government scholarship but was placed in a program that did not match his passion. Facing financial hardship and emotional challenges, he persevered and later pursued a Bachelor of Science in Nursing.</p>
+
+<p>Inspired by his journey, Bonafide envisioned a foundation that ensures no student feels unsupported, unheard, or forced to bury their talents. “LUWI” means “God’s Mercy,” symbolizing hope, light, and compassion for every student.</p>
+
+<h3>Our Mission</h3>
+<p>To support, empower, and nurture students through mentorship, academic assistance, awareness programs, and safe spaces that enable them to thrive academically, socially, and emotionally.</p>
+
+<h3>Our Vision</h3>
+<p>To build a safe, inclusive, and empowering educational ecosystem in Zambia where all students have the opportunity to succeed, grow creatively, and contribute to their communities.</p>
+
+<h3>Our Values</h3>
+<ul>
+<li>Compassion and Empathy</li>
+<li>Integrity and Accountability</li>
+<li>Equity and Inclusion</li>
+<li>Empowerment through Education</li>
+<li>Community Engagement</li>
+</ul>
+</div>
 </section>
 
-<!-- MISSION & VISION -->
-<section class="mission-vision">
-    <div class="mission-box">
-        <h2>Our Mission</h2>
-        <p>
-            To provide sustainable support to underprivileged individuals and communities, focusing on education, health, 
-            and social empowerment, while inspiring hope and resilience.
-        </p>
-    </div>
-    <div class="vision-box">
-        <h2>Our Vision</h2>
-        <p>
-            To become a leading foundation in Africa, recognized for transforming lives and communities through impactful 
-            initiatives and partnerships that ensure equal opportunities for all.
-        </p>
-    </div>
-</section>
-
-<!-- FOUNDER SECTION -->
-<section class="founder-section">
-    <h2>Meet Our Founder</h2>
-    <p>
-        Bonafide Mulunga, the visionary behind LUWI Foundation, started this organization with a deep commitment to social 
-        justice and community development. Inspired by the challenges faced by vulnerable populations, Bonafide has 
-        dedicated his efforts to providing education, healthcare, and emergency support for those in need, creating a 
-        legacy of hope and empowerment.
-    </p>
-</section>
-
-<!-- PROGRAMS & ACTIVITIES -->
-<section class="programs-section">
-    <h2>Our Programs & Activities</h2>
-    <div class="programs-grid">
-        
-        <div class="program-box">
-            <h3>Education Support</h3>
-            <p>Providing scholarships, school supplies, and learning materials to underprivileged children to ensure access to quality education.</p>
-        </div>
-
-        <div class="program-box">
-            <h3>Healthcare & Nutrition</h3>
-            <p>Organizing medical camps, health education, and providing nutritious meals to improve community health and well-being.</p>
-        </div>
-
-        <div class="program-box">
-            <h3>Emergency Relief</h3>
-            <p>Responding to natural disasters and crises with food, clothing, shelter, and immediate assistance to affected families.</p>
-        </div>
-
-        <div class="program-box">
-            <h3>Youth & Community Empowerment</h3>
-            <p>Running workshops, skill-building programs, and mentorship initiatives to help youth become self-reliant and active citizens.</p>
-        </div>
-
-        <div class="program-box">
-            <h3>Women & Child Welfare</h3>
-            <p>Supporting women and children through advocacy, safe spaces, and programs that promote health, education, and rights.</p>
-        </div>
-
-        <div class="program-box">
-            <h3>Environmental Sustainability</h3>
-            <p>Engaging communities in tree planting, clean-up drives, and awareness campaigns to protect the environment for future generations.</p>
-        </div>
-
-    </div>
-</section>
+<footer>
+<p>© 2026 LUWI Foundation. All rights reserved.</p>
+<p>
+<a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+</p>
+</footer>
 
 </body>
 </html>
