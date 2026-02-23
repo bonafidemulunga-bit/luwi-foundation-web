@@ -5,30 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LUWI Foundation Zambia - Home</title>
 
-<!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-<!-- AOS CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
-<!-- Custom CSS -->
 <link rel="stylesheet" href="style.css">
 
+<style>
+.hero {
+    background: url('images/home-hero.jpg') center/cover no-repeat;
+    color: white;
+    padding: 120px 0 80px;
+}
+.focus-card:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+</style>
 </head>
 <body>
 
-<!-- HEADER -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+<!-- NAVIGATION -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">
-      <img src="images/logo.png" alt="LUWI Foundation Logo" height="50" class="me-2">
-      LUWI Foundation Zambia
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/logo.png" height="45" class="me-2" alt="LUWI Foundation Logo">
+      <strong>LUWI Foundation</strong>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -46,124 +45,65 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero position-relative text-center text-white" style="background: #007bff; padding: 120px 0;">
-  <div id="particles-js" class="position-absolute w-100 h-100 top-0 start-0"></div>
-  <div class="container position-relative" data-aos="fade-up">
-    <h1 class="display-4 fw-bold">LUWI Foundation Zambia</h1>
-    <p class="lead mb-4">As long as a student is affected — we are there.</p>
-    <a href="donate.html" class="btn btn-warning btn-lg me-2">Donate Now</a>
-    <a href="about.html" class="btn btn-light btn-lg">Learn More</a>
-  </div>
-</section>
-
-<!-- WELCOME -->
-<section class="py-5 bg-light text-center">
-  <div class="container" data-aos="fade-up">
-    <h2 class="text-primary mb-3">Welcome to LUWI Foundation Zambia</h2>
-    <p class="mb-3">We empower students and communities in Zambia through education, healthcare, emergency relief, and social empowerment.</p>
-    <p class="mb-4">Every student deserves a safe environment to grow academically, socially, and creatively. Join us in transforming lives.</p>
-    <a href="programs.html" class="btn btn-primary btn-lg">Explore Our Programs</a>
-  </div>
-</section>
-
-<!-- TEAM -->
-<section id="team" class="py-5 bg-white">
+<section class="hero text-center">
   <div class="container">
-    <h2 class="text-center mb-4 text-primary" data-aos="fade-up">Our Team</h2>
-    <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Meet the passionate individuals driving our mission forward.</p>
-    <div class="row g-4 justify-content-center">
-
-      <!-- Repeat for each team member -->
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-        <div class="card shadow-sm border-0 h-100 team-card">
-          <img src="images/bonafide.jpg" class="card-img-top" alt="Bonafide Mulunga">
-          <div class="card-body text-center">
-            <h5 class="card-title">Bonafide Mulunga</h5>
-            <p class="text-muted">Founder & Executive Director</p>
-            <p class="card-text small">Drives community development and education outreach.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Add other members similarly -->
-    </div>
+    <h1 class="fw-bold">Empowering Students, Protecting Futures</h1>
+    <p class="lead">Education, Safety, and Community Empowerment Programs in Zambia</p>
+    <a href="donate.html" class="btn btn-light btn-lg mt-3">Support Us</a>
   </div>
 </section>
 
 <!-- FOCUS AREAS -->
 <section class="py-5 bg-light">
-  <div class="container text-center">
-    <h2 class="text-primary mb-4" data-aos="fade-up">Our Focus Areas</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="container">
+    <h2 class="text-center mb-5">Our Focus Areas</h2>
+    <div class="row g-4">
 
-      <div class="col" data-aos="fade-up" data-aos-delay="100">
-        <div class="card h-100 shadow-sm border-0 p-4">
-          <i class="fas fa-user-graduate fa-2x text-primary"></i>
-          <h5 class="card-title text-primary mt-3">Educational Support & Scholarships</h5>
-          <p class="card-text">Helping students achieve their academic goals.</p>
+      <div class="col-md-4">
+        <div class="card focus-card shadow text-center h-100 p-3">
+          <img src="images/focus/education.jpg" class="card-img-top rounded mb-3" alt="Education Focus">
+          <h5 class="text-primary">Education</h5>
+          <p>Providing quality educational programs, scholarships, and mentoring for students.</p>
         </div>
       </div>
 
-      <div class="col" data-aos="fade-up" data-aos-delay="200">
-        <div class="card h-100 shadow-sm border-0 p-4">
-          <i class="fas fa-hand-holding-heart fa-2x text-primary"></i>
-          <h5 class="card-title text-primary mt-3">Emergency Relief & Crisis Response</h5>
-          <p class="card-text">Responding quickly to urgent needs in communities.</p>
+      <div class="col-md-4">
+        <div class="card focus-card shadow text-center h-100 p-3">
+          <img src="images/focus/health.jpg" class="card-img-top rounded mb-3" alt="Health Focus">
+          <h5 class="text-primary">Health & Wellbeing</h5>
+          <p>Mental health support, counseling, and awareness campaigns for youth and communities.</p>
         </div>
       </div>
 
-      <div class="col" data-aos="fade-up" data-aos-delay="300">
-        <div class="card h-100 shadow-sm border-0 p-4">
-          <i class="fas fa-leaf fa-2x text-primary"></i>
-          <h5 class="card-title text-primary mt-3">Environmental Sustainability</h5>
-          <p class="card-text">Promoting eco-friendly and sustainable practices.</p>
+      <div class="col-md-4">
+        <div class="card focus-card shadow text-center h-100 p-3">
+          <img src="images/focus/protection.jpg" class="card-img-top rounded mb-3" alt="Protection Focus">
+          <h5 class="text-primary">Protection</h5>
+          <p>Preventing gender-based violence, supporting safe environments, and advocating rights.</p>
         </div>
       </div>
 
     </div>
-    <a href="about.html" class="btn btn-primary btn-lg mt-4" data-aos="fade-up" data-aos-delay="400">About Us</a>
+  </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="py-5 text-center bg-primary text-white">
+  <div class="container">
+    <h3>Join Us in Making a Difference</h3>
+    <p>Your support helps transform lives across Zambia.</p>
+    <a href="donate.html" class="btn btn-light btn-lg">Donate Now</a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="py-5 bg-dark text-white">
+<footer class="bg-dark text-white py-4">
   <div class="container text-center">
-    <h5>LUWI Foundation Zambia</h5>
-    <div class="mb-3">
-      <a href="#" target="_blank" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" target="_blank" class="text-white"><i class="fab fa-tiktok"></i></a>
-    </div>
-    <div class="mb-3">
-      <a href="donate.html" class="text-white">Donate</a> |
-      <a href="contact.html" class="text-white">Contact</a>
-    </div>
-    <small>&copy; 2026 LUWI Foundation Zambia. All rights reserved.</small>
+    <p class="mb-1"><strong>© 2026 LUWI Foundation Zambia</strong></p>
+    <small>Empowering Students | Protecting Futures</small>
   </div>
 </footer>
 
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script>
-  AOS.init({ duration: 1000, once: true });
-
-  particlesJS("particles-js", {
-    "particles": {
-      "number": { "value": 60 },
-      "color": { "value": "#ffffff" },
-      "shape": { "type": "circle" },
-      "opacity": { "value": 0.5 },
-      "size": { "value": 3 },
-      "line_linked": { "enable": true, "distance": 120, "color": "#ffffff", "opacity": 0.4, "width": 1 },
-      "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "bounce" }
-    },
-    "interactivity": {
-      "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }
-    },
-    "retina_detect": true
-  });
-</script>
-
 </body>
 </html>
