@@ -58,12 +58,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================= */
-/* HERO SECTION WITH GRADIENT & ANIMATIONS */
+/* HERO SECTION WITH PARTICLES & GRADIENT */
 /* ============================= */
 .hero {
     position: relative;
-    background-size: cover;
-    background-position: center;
+    background: url('images/banner.png') center/cover no-repeat fixed;
     color: #fff;
     text-align: center;
     height: 90vh;
@@ -71,6 +70,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     transition: background 0.5s ease;
+    overflow: hidden;
 }
 
 .hero::before {
@@ -80,6 +80,16 @@ h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(135deg, rgba(0,123,255,0.6) 0%, rgba(255,193,7,0.6) 100%);
     mix-blend-mode: multiply;
     transition: background 0.3s ease;
+    z-index: 1;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    z-index: 1;
 }
 
 .hero .container {
@@ -107,8 +117,16 @@ h1, h2, h3, h4, h5, h6 {
 .hero .btn-warning:hover { background: #e0a800; }
 
 /* ============================= */
-/* SECTION HEADINGS WITH ANIMATION */
+/* KEYFRAMES FOR HERO ANIMATION */
+@keyframes fadeSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ============================= */
+/* SECTION HEADINGS WITH ANIMATION */
 h2.text-primary {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
@@ -135,15 +153,6 @@ h2.text-primary.animate {
 }
 
 /* ============================= */
-/* KEYFRAMES FOR HERO ANIMATION */
-@keyframes fadeSlideUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ============================= */
 /* CARDS / PROGRAMS / FOCUS AREAS */
 .card {
     border: none;
@@ -152,6 +161,8 @@ h2.text-primary.animate {
     background: #fff;
     padding: 20px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 .card:hover {
@@ -163,38 +174,43 @@ h2.text-primary.animate {
 .card-text { font-size: 0.95rem; color: #555; }
 
 /* ============================= */
-/* TEAM SECTION */
-.team-member { transition: transform 0.3s ease; }
-.team-member:hover { transform: translateY(-5px); }
-
-.member-image { position: relative; overflow: hidden; }
-
-.bio-overlay {
+/* TEAM 3D FLIP CARDS */
+.team-card { perspective: 1000px; margin-bottom: 30px; }
+.team-card-inner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.team-card:hover .team-card-inner { transform: rotateY(180deg); }
+.team-card-front, .team-card-back {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.75);
-    color: #fff;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 15px;
-    border-radius: 50%;
-    opacity: 0;
-    transition: 0.3s ease;
-}
-
-.team-member:hover .bio-overlay { opacity: 1; }
-
-.team-member img {
-    border-radius: 50%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.team-member img:hover {
-    transform: scale(1.05);
+    padding: 1rem;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    background: #fff;
+}
+.team-card-front img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; }
+.team-card-front h5 { margin-bottom: 0.3rem; }
+.team-card-back {
+    background: #0d6efd;
+    color: #fff;
+    transform: rotateY(180deg);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    text-align: center;
 }
 
 /* ============================= */
@@ -230,30 +246,6 @@ h2.text-primary.animate {
 }
 
 /* ============================= */
-/* FORMS */
-.card form input,
-.card form select,
-.card form textarea,
-.card form button {
-    margin-bottom: 1rem;
-    width: 100%;
-    padding: 12px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card form input:focus,
-.card form select:focus,
-.card form textarea:focus {
-    border-color: #007BFF;
-    outline: none;
-    box-shadow: 0 0 8px rgba(0,123,255,0.25);
-}
-
-.card form textarea { resize: vertical; }
-
-/* ============================= */
 /* FOOTER */
 footer {
     font-size: 0.95rem;
@@ -282,6 +274,7 @@ footer a:hover { color: #FFC107; }
     .hero h1 { font-size: 2rem; }
     .hero p { font-size: 1rem; }
     .btn { font-size: 1rem; padding: 10px 20px; }
+    .team-card-front img { width: 120px; height: 120px; }
 }
 
 @media (max-width: 480px) {
