@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -32,21 +33,23 @@ h1, h2, h3, h4, h5, h6 {
 .navbar {
     padding: 0.8rem 1rem;
     font-weight: 600;
+    transition: background 0.3s ease, padding 0.3s ease;
 }
 
 .navbar-brand img {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .navbar-brand img:hover {
     transform: scale(1.1);
+    opacity: 0.9;
 }
 
 .navbar-nav .nav-link {
     font-weight: 600;
     padding: 0.5rem 1rem;
     border-radius: 6px;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover,
@@ -55,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================= */
-/* HERO SECTION */
+/* HERO SECTION WITH GRADIENT & ANIMATIONS */
 /* ============================= */
 .hero {
     position: relative;
@@ -67,13 +70,16 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background 0.5s ease;
 }
 
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    background: linear-gradient(135deg, rgba(0,123,255,0.6) 0%, rgba(255,193,7,0.6) 100%);
+    mix-blend-mode: multiply;
+    transition: background 0.3s ease;
 }
 
 .hero .container {
@@ -81,40 +87,36 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 2;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-}
-
+.hero h1,
+.hero p,
 .hero .btn {
-    font-size: 1.1rem;
-    padding: 12px 30px;
-    border-radius: 8px;
-    transition: 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 1s forwards;
 }
 
-/* Hero button hover effects */
-.hero .btn-primary:hover {
-    background: #0056b3;
+.hero h1 { animation-delay: 0.3s; font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+.hero p { animation-delay: 0.6s; font-size: 1.25rem; margin-bottom: 2rem; line-height: 1.5; }
+.hero .btn { animation-delay: 0.9s; font-size: 1.1rem; padding: 12px 30px; border-radius: 8px; }
+
+.hero .btn:hover {
+    transform: translateY(-2px);
 }
-.hero .btn-warning:hover {
-    background: #e0a800;
-}
+
+.hero .btn-primary:hover { background: #0056b3; }
+.hero .btn-warning:hover { background: #e0a800; }
 
 /* ============================= */
-/* SECTION HEADINGS */
+/* SECTION HEADINGS WITH ANIMATION */
 /* ============================= */
 h2.text-primary {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     color: #007BFF;
     position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
 }
 
 h2.text-primary::after {
@@ -127,9 +129,22 @@ h2.text-primary::after {
     border-radius: 2px;
 }
 
+h2.text-primary.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================= */
+/* KEYFRAMES FOR HERO ANIMATION */
+@keyframes fadeSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ============================= */
 /* CARDS / PROGRAMS / FOCUS AREAS */
-/* ============================= */
 .card {
     border: none;
     border-radius: 12px;
@@ -140,42 +155,24 @@ h2.text-primary::after {
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
 }
 
-.card-title {
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.card-text {
-    font-size: 0.95rem;
-    color: #555;
-}
+.card-title { font-weight: 700; margin-bottom: 0.5rem; }
+.card-text { font-size: 0.95rem; color: #555; }
 
 /* ============================= */
 /* TEAM SECTION */
-/* ============================= */
-.team-member {
-    transition: transform 0.3s ease;
-}
+.team-member { transition: transform 0.3s ease; }
+.team-member:hover { transform: translateY(-5px); }
 
-.team-member:hover {
-    transform: translateY(-5px);
-}
-
-.member-image {
-    position: relative;
-    overflow: hidden;
-}
+.member-image { position: relative; overflow: hidden; }
 
 .bio-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: rgba(0,0,0,0.75);
     color: #fff;
     display: flex;
@@ -188,34 +185,33 @@ h2.text-primary::after {
     transition: 0.3s ease;
 }
 
-.team-member:hover .bio-overlay {
-    opacity: 1;
-}
+.team-member:hover .bio-overlay { opacity: 1; }
 
 .team-member img {
     border-radius: 50%;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team-member img:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* ============================= */
 /* BUTTONS */
-/* ============================= */
 .btn-primary {
     background: #007BFF;
     border: none;
     color: #fff;
     font-weight: 600;
-    transition: 0.3s ease;
+    transition: 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 12px rgba(0,123,255,0.25);
 }
 
 .btn-primary:hover {
     background: #0056b3;
     box-shadow: 0 6px 20px rgba(0,123,255,0.35);
+    transform: translateY(-2px);
 }
 
 .btn-warning {
@@ -223,13 +219,14 @@ h2.text-primary::after {
     border: none;
     color: #fff;
     font-weight: 600;
-    transition: 0.3s ease;
+    transition: 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 12px rgba(255,193,7,0.25);
 }
 
 .btn-warning:hover {
     background: #e0a800;
     box-shadow: 0 6px 20px rgba(255,193,7,0.35);
+    transform: translateY(-2px);
 }
 
 /* ============================= */
@@ -251,16 +248,13 @@ h2.text-primary::after {
 .card form textarea:focus {
     border-color: #007BFF;
     outline: none;
-    box-shadow: 0 0 8px rgba(0,123,255,0.3);
+    box-shadow: 0 0 8px rgba(0,123,255,0.25);
 }
 
-.card form textarea {
-    resize: vertical;
-}
+.card form textarea { resize: vertical; }
 
 /* ============================= */
 /* FOOTER */
-/* ============================= */
 footer {
     font-size: 0.95rem;
     background: #222;
@@ -275,9 +269,7 @@ footer a {
     transition: color 0.3s ease;
 }
 
-footer a:hover {
-    color: #FFC107;
-}
+footer a:hover { color: #FFC107; }
 
 /* ============================= */
 /* RESPONSIVE / MOBILE */
