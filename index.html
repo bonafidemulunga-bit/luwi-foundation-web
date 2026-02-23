@@ -8,7 +8,7 @@
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Font Awesome for icons -->
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <!-- Google Fonts -->
@@ -27,7 +27,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
   <div class="container">
     <a class="navbar-brand fw-bold" href="index.html">
-      <img src="images/logo.png" alt="LUWI Foundation Zambia Logo" height="50" class="me-2">
+      <img src="images/logo.png" alt="LUWI Foundation Logo" height="50" class="me-2">
       LUWI Foundation Zambia
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -45,110 +45,47 @@
   </div>
 </nav>
 
-<!-- HERO / BANNER -->
-<section class="hero">
-  <div id="particles-js"></div>
-  <div class="container">
-    <h1>LUWI Foundation Zambia</h1>
-    <p>As long as a student is affected — we are there.</p>
-    <a href="donate.html" class="btn btn-warning btn-lg">Donate Now</a>
-    <a href="about.html" class="btn btn-primary btn-lg">Learn More</a>
+<!-- HERO -->
+<section class="hero position-relative text-center text-white" style="background: #007bff; padding: 120px 0;">
+  <div id="particles-js" class="position-absolute w-100 h-100 top-0 start-0"></div>
+  <div class="container position-relative" data-aos="fade-up">
+    <h1 class="display-4 fw-bold">LUWI Foundation Zambia</h1>
+    <p class="lead mb-4">As long as a student is affected — we are there.</p>
+    <a href="donate.html" class="btn btn-warning btn-lg me-2">Donate Now</a>
+    <a href="about.html" class="btn btn-light btn-lg">Learn More</a>
   </div>
 </section>
 
-<!-- WELCOME / INTRO -->
+<!-- WELCOME -->
 <section class="py-5 bg-light text-center">
   <div class="container" data-aos="fade-up">
-    <h2 class="text-primary animate">Welcome to LUWI Foundation Zambia</h2>
+    <h2 class="text-primary mb-3">Welcome to LUWI Foundation Zambia</h2>
     <p class="mb-3">We empower students and communities in Zambia through education, healthcare, emergency relief, and social empowerment.</p>
     <p class="mb-4">Every student deserves a safe environment to grow academically, socially, and creatively. Join us in transforming lives.</p>
     <a href="programs.html" class="btn btn-primary btn-lg">Explore Our Programs</a>
   </div>
 </section>
 
-<!-- TEAM SECTION -->
+<!-- TEAM -->
 <section id="team" class="py-5 bg-white">
   <div class="container">
     <h2 class="text-center mb-4 text-primary" data-aos="fade-up">Our Team</h2>
     <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Meet the passionate individuals driving our mission forward.</p>
     <div class="row g-4 justify-content-center">
 
-      <!-- Team Members -->
+      <!-- Repeat for each team member -->
       <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-        <div class="team-card">
-          <div class="team-card-inner">
-            <div class="team-card-front">
-              <img src="images/bonafide.jpg" alt="Bonafide Mulunga">
-              <h5>Bonafide Mulunga</h5>
-              <p class="text-muted">Founder & Executive Director</p>
-            </div>
-            <div class="team-card-back">
-              <p>Bonafide Mulunga is the Founder & Executive Director of LUWI Foundation Zambia. He drives community development and education outreach.</p>
-            </div>
+        <div class="card shadow-sm border-0 h-100 team-card">
+          <img src="images/bonafide.jpg" class="card-img-top" alt="Bonafide Mulunga">
+          <div class="card-body text-center">
+            <h5 class="card-title">Bonafide Mulunga</h5>
+            <p class="text-muted">Founder & Executive Director</p>
+            <p class="card-text small">Drives community development and education outreach.</p>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="250">
-        <div class="team-card">
-          <div class="team-card-inner">
-            <div class="team-card-front">
-              <img src="images/maita.jpg" alt="Maita Karomba">
-              <h5>Maita Karomba</h5>
-              <p class="text-muted">Program Coordinator</p>
-            </div>
-            <div class="team-card-back">
-              <p>Maita Karomba coordinates all programs and ensures smooth implementation of initiatives across schools and communities.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-        <div class="team-card">
-          <div class="team-card-inner">
-            <div class="team-card-front">
-              <img src="images/justina.jpg" alt="Justina Mwewa">
-              <h5>Justina Mwewa</h5>
-              <p class="text-muted">Finance Manager</p>
-            </div>
-            <div class="team-card-back">
-              <p>Justina Mwewa manages finances and ensures accountability and transparency in all matters.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="350">
-        <div class="team-card">
-          <div class="team-card-inner">
-            <div class="team-card-front">
-              <img src="images/ethel.jpg" alt="Ethel Tembo">
-              <h5>Ethel Tembo</h5>
-              <p class="text-muted">Community Outreach Lead</p>
-            </div>
-            <div class="team-card-back">
-              <p>Ethel Tembo leads community outreach and partnerships to maximize student impact.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-        <div class="team-card">
-          <div class="team-card-inner">
-            <div class="team-card-front">
-              <img src="images/luscious.jpg" alt="Luscious Chela">
-              <h5>Luscious Chela</h5>
-              <p class="text-muted">Logistics & Support</p>
-            </div>
-            <div class="team-card-back">
-              <p>Luscious Chela oversees logistics and program support, ensuring smooth operations for all events.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <!-- Add other members similarly -->
     </div>
   </div>
 </section>
@@ -160,24 +97,24 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
       <div class="col" data-aos="fade-up" data-aos-delay="100">
-        <div class="card h-100 shadow-sm border-0">
-          <i class="fas fa-user-graduate"></i>
+        <div class="card h-100 shadow-sm border-0 p-4">
+          <i class="fas fa-user-graduate fa-2x text-primary"></i>
           <h5 class="card-title text-primary mt-3">Educational Support & Scholarships</h5>
           <p class="card-text">Helping students achieve their academic goals.</p>
         </div>
       </div>
 
       <div class="col" data-aos="fade-up" data-aos-delay="200">
-        <div class="card h-100 shadow-sm border-0">
-          <i class="fas fa-hand-holding-heart"></i>
+        <div class="card h-100 shadow-sm border-0 p-4">
+          <i class="fas fa-hand-holding-heart fa-2x text-primary"></i>
           <h5 class="card-title text-primary mt-3">Emergency Relief & Crisis Response</h5>
           <p class="card-text">Responding quickly to urgent needs in communities.</p>
         </div>
       </div>
 
       <div class="col" data-aos="fade-up" data-aos-delay="300">
-        <div class="card h-100 shadow-sm border-0">
-          <i class="fas fa-leaf"></i>
+        <div class="card h-100 shadow-sm border-0 p-4">
+          <i class="fas fa-leaf fa-2x text-primary"></i>
           <h5 class="card-title text-primary mt-3">Environmental Sustainability</h5>
           <p class="card-text">Promoting eco-friendly and sustainable practices.</p>
         </div>
@@ -189,26 +126,25 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="py-5">
+<footer class="py-5 bg-dark text-white">
   <div class="container text-center">
     <h5>LUWI Foundation Zambia</h5>
     <div class="mb-3">
-      <a href="https://www.facebook.com/share/1BgJJezErn/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.tiktok.com/@luwi.foundation.z?_r=1&_t=ZS-94AYUzTuB85" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="#" target="_blank" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" target="_blank" class="text-white"><i class="fab fa-tiktok"></i></a>
     </div>
     <div class="mb-3">
-      <a href="donate.html">Donate</a> |
-      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="text-white">Donate</a> |
+      <a href="contact.html" class="text-white">Contact</a>
     </div>
     <small>&copy; 2026 LUWI Foundation Zambia. All rights reserved.</small>
   </div>
 </footer>
 
-<!-- ============================= -->
-<!-- SCRIPTS -->
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
   AOS.init({ duration: 1000, once: true });
 
@@ -228,5 +164,6 @@
     "retina_detect": true
   });
 </script>
+
 </body>
 </html>
