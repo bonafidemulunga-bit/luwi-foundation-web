@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-/* Extra polish */
+/* Hero / banner */
 .donate-header {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
     url('images/banner.png') center/cover no-repeat;
@@ -18,6 +18,15 @@
     padding: 80px 0;
     text-align: center;
 }
+.donate-header h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+.donate-header p {
+    font-size: 1.2rem;
+}
+
+/* Form & info cards */
 .card {
     border: none;
     border-radius: 12px;
@@ -25,6 +34,18 @@
 .btn-primary {
     padding: 12px;
     font-weight: 600;
+}
+#instructions {
+    border-radius: 12px;
+}
+
+/* Info card hover effect */
+.info-card {
+    transition: transform 0.2s ease;
+    text-decoration: none;
+}
+.info-card:hover {
+    transform: scale(1.03);
 }
 </style>
 </head>
@@ -34,9 +55,9 @@
 <!-- HEADER -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
+    <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
       <img src="images/logo.png" alt="LUWI Foundation Logo" height="45" class="me-2">
-      <strong>LUWI Foundation</strong>
+      LUWI Foundation
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -46,7 +67,7 @@
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
-        <li class="nav-item"><a class="nav-link active" href="donate.html">Donate</a></li>
+        <li class="nav-item"><a class="nav-link active fw-semibold" href="donate.html">Donate</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -56,25 +77,27 @@
 <!-- HERO SECTION -->
 <section class="donate-header">
   <div class="container">
-    <h1 class="fw-bold">Support Education. Empower Futures.</h1>
+    <h1>Support Education. Empower Futures.</h1>
     <p class="lead">Your donation helps us uplift students and transform communities across Zambia.</p>
   </div>
 </section>
 
-<!-- DONATION FORM -->
+<!-- DONATION FORM + INFO CARDS -->
 <section class="py-5 bg-light">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card shadow p-4">
+    <div class="row g-4 justify-content-center">
 
-          <h4 class="text-primary mb-3 text-center">Make a Mobile Money Donation</h4>
+      <!-- Donation Form -->
+      <div class="col-lg-6">
+        <div class="card shadow-sm p-4 rounded-3">
+
+          <h4 class="text-primary mb-4 text-center">Make a Mobile Money Donation</h4>
 
           <form id="donationForm">
 
             <!-- Amount -->
             <div class="mb-3">
-              <label class="form-label">Select Amount (ZMW)</label>
+              <label class="form-label fw-semibold">Select Amount (ZMW)</label>
               <select class="form-select" id="amount">
                 <option value="50">ZMW 50</option>
                 <option value="100">ZMW 100</option>
@@ -87,20 +110,20 @@
 
             <!-- Phone -->
             <div class="mb-3">
-              <label class="form-label">Your Mobile Number</label>
+              <label class="form-label fw-semibold">Your Mobile Number</label>
               <input type="tel" class="form-control" id="phone" placeholder="e.g. 096XXXXXXX" required>
             </div>
 
             <!-- Network -->
             <div class="mb-3">
-              <label class="form-label">Choose Network</label>
+              <label class="form-label fw-semibold">Choose Network</label>
               <select class="form-select" id="network">
                 <option value="MTN">MTN Mobile Money</option>
                 <option value="Airtel">Airtel Money</option>
               </select>
             </div>
 
-            <button type="button" class="btn btn-primary w-100" onclick="generateInstructions()">
+            <button type="button" class="btn btn-primary w-100 mt-2" onclick="generateInstructions()">
               Complete Donation
             </button>
 
@@ -111,12 +134,40 @@
 
         </div>
       </div>
+
+      <!-- Info Cards -->
+      <div class="col-lg-4">
+        <div class="d-grid gap-3">
+
+          <a href="https://wa.me/260969852932" target="_blank" class="card info-card text-center p-3 text-dark">
+            <h5 class="text-primary fw-semibold mb-1">WhatsApp</h5>
+            <p class="mb-0">+260 969 852 932</p>
+          </a>
+
+          <a href="mailto:luwifoundationzambia@gmail.com" class="card info-card text-center p-3 text-dark">
+            <h5 class="text-primary fw-semibold mb-1">Email</h5>
+            <p class="mb-0">luwifoundationzambia@gmail.com</p>
+          </a>
+
+          <div class="card info-card text-center p-3 text-dark">
+            <h5 class="text-primary fw-semibold mb-1">Phone</h5>
+            <p class="mb-0">Airtel 0972 308 641 | MTN 0969 852 932</p>
+          </div>
+
+          <div class="card info-card text-center p-3 text-dark">
+            <h5 class="text-primary fw-semibold mb-1">Location</h5>
+            <p class="mb-0">Lusaka, Zambia</p>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-primary text-white py-4">
+<footer class="bg-primary text-white py-4 mt-5">
   <div class="container text-center">
     <p class="mb-1"><strong>© 2026 LUWI Foundation Zambia</strong></p>
     <small>Empowering Students | Transforming Communities</small>
