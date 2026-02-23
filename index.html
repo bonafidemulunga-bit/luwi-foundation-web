@@ -8,7 +8,7 @@
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Font Awesome for icons -->
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <!-- Google Fonts -->
@@ -22,102 +22,97 @@
 
 <style>
 /* ============================= */
-/* GLOBAL */
-body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; margin:0; }
+/* GLOBAL STYLES */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin:0;
+    scroll-behavior: smooth;
+}
+a { text-decoration: none; transition: color 0.3s; }
+a:hover { color: #007BFF; }
 
 /* ============================= */
 /* HERO WITH PARTICLES */
 .hero {
-  position: relative;
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  color: #fff;
-  background: url('images/banner.png') center/cover no-repeat fixed;
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    color: #fff;
+    background: url('images/banner.png') center/cover no-repeat fixed;
 }
 .hero::after {
-  content:"";
-  position:absolute;
-  top:0; left:0;
-  width:100%; height:100%;
-  background: rgba(0,0,0,0.5);
-  z-index: 1;
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
 }
 #particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top:0;
-  left:0;
-  z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    z-index: 1;
 }
-.hero .container {
-  position: relative;
-  z-index: 2;
-}
-.hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
-.hero p { font-size: 1.25rem; margin-bottom: 2rem; }
+.hero .container { position: relative; z-index: 2; }
+.hero h1, .hero p, .hero .btn { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
 .hero .btn { padding: 0.75rem 1.5rem; font-size: 1.1rem; margin: 0.3rem; transition: transform 0.3s; }
 .hero .btn:hover { transform: scale(1.05); }
 
 /* ============================= */
+/* ANIMATION CLASS */
+.animate { opacity: 1 !important; transform: translateY(0) !important; }
+
+/* ============================= */
 /* TEAM 3D FLIP CARDS */
-.team-card {
-  perspective: 1000px;
-  margin-bottom: 30px;
-}
+.team-card { perspective: 1000px; margin-bottom: 30px; }
 .team-card-inner {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  border-radius: 15px;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 15px;
+    opacity: 0; transform: translateY(20px);
 }
 .team-card:hover .team-card-inner { transform: rotateY(180deg); }
 .team-card-front, .team-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  background: #fff;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    background: #fff;
 }
-.team-card-front img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
+.team-card-front img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; }
 .team-card-front h5 { margin-bottom: 0.3rem; }
 .team-card-back {
-  background: #0d6efd;
-  color: #fff;
-  transform: rotateY(180deg);
-  font-size: 0.95rem;
-  line-height: 1.4;
-  text-align: center;
+    background: #0d6efd;
+    color: #fff;
+    transform: rotateY(180deg);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    text-align: center;
 }
 
 /* ============================= */
 /* FOCUS AREAS */
-.card {
-  border-radius: 15px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
-  padding: 1.5rem;
-}
+.card { border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s; text-align: center; padding: 1.5rem; opacity: 0; transform: translateY(20px); }
 .card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
 .card i { font-size: 2rem; color: #0d6efd; margin-bottom: 1rem; }
 
@@ -129,16 +124,16 @@ footer a:hover { color: #ffc107; transform: scale(1.2); }
 footer h5 { margin-bottom: 1rem; font-weight: 700; }
 
 /* ============================= */
-/* BUTTON HOVER */
+/* BUTTONS */
 .btn-primary:hover { background-color: #0056b3; border-color: #0056b3; }
 .btn-warning:hover { background-color: #e0a800; border-color: #d39e00; }
 
 /* ============================= */
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .hero h1 { font-size: 2.2rem; }
-  .hero p { font-size: 1rem; }
-  .team-card-front img { width: 120px; height: 120px; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1rem; }
+    .team-card-front img { width: 120px; height: 120px; }
 }
 </style>
 </head>
@@ -167,7 +162,7 @@ footer h5 { margin-bottom: 1rem; font-weight: 700; }
 </nav>
 
 <!-- HERO / BANNER -->
-<section class="hero" data-aos="fade-up">
+<section class="hero">
   <div id="particles-js"></div>
   <div class="container">
     <h1>LUWI Foundation Zambia</h1>
@@ -178,7 +173,7 @@ footer h5 { margin-bottom: 1rem; font-weight: 700; }
 </section>
 
 <!-- WELCOME / INTRO -->
-<section class="py-5 bg-light text-center" data-aos="fade-up" data-aos-delay="200">
+<section class="py-5 bg-light text-center">
   <div class="container">
     <h2 class="text-primary mb-4">Welcome to LUWI Foundation Zambia</h2>
     <p class="mb-3">We empower students and communities in Zambia through education, healthcare, emergency relief, and social empowerment.</p>
@@ -190,12 +185,12 @@ footer h5 { margin-bottom: 1rem; font-weight: 700; }
 <!-- TEAM SECTION -->
 <section id="team" class="py-5 bg-white">
   <div class="container">
-    <h2 class="text-center mb-4 text-primary" data-aos="fade-up">Our Team</h2>
-    <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Meet the passionate individuals driving our mission forward.</p>
+    <h2 class="text-center mb-4 text-primary">Our Team</h2>
+    <p class="text-center mb-5">Meet the passionate individuals driving our mission forward.</p>
     <div class="row g-4 justify-content-center">
 
-      <!-- Team Members (3D Flip Cards) -->
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+      <!-- Team Members -->
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="team-card">
           <div class="team-card-inner">
             <div class="team-card-front">
@@ -210,7 +205,7 @@ footer h5 { margin-bottom: 1rem; font-weight: 700; }
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="250">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="team-card">
           <div class="team-card-inner">
             <div class="team-card-front">
@@ -225,7 +220,7 @@ footer h5 { margin-bottom: 1rem; font-weight: 700; }
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="team-card">
           <div class="team-card-inner">
             <div class="team-card-front">
@@ -240,7 +235,7 @@ footer h5 { margin-bottom: 1rem; font-weight: 700; }
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="350">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="team-card">
           <div class="team-card-inner">
             <div class="team-card-front">
@@ -255,7 +250,7 @@ footer h5 { margin-bottom: 1rem; font-weight: 700; }
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="team-card">
           <div class="team-card-inner">
             <div class="team-card-front">
@@ -277,10 +272,10 @@ footer h5 { margin-bottom: 1rem; font-weight: 700; }
 <!-- FOCUS AREAS -->
 <section class="py-5 bg-light">
   <div class="container text-center">
-    <h2 class="text-primary mb-4" data-aos="fade-up">Our Focus Areas</h2>
+    <h2 class="text-primary mb-4">Our Focus Areas</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
-      <div class="col" data-aos="fade-up" data-aos-delay="100">
+      <div class="col">
         <div class="card h-100 shadow-sm border-0">
           <i class="fas fa-user-graduate"></i>
           <h5 class="card-title text-primary mt-3">Educational Support & Scholarships</h5>
@@ -288,7 +283,7 @@ footer h5 { margin-bottom: 1rem; font-weight: 700; }
         </div>
       </div>
 
-      <div class="col" data-aos="fade-up" data-aos-delay="200">
+      <div class="col">
         <div class="card h-100 shadow-sm border-0">
           <i class="fas fa-hand-holding-heart"></i>
           <h5 class="card-title text-primary mt-3">Emergency Relief & Crisis Response</h5>
@@ -296,7 +291,7 @@ footer h5 { margin-bottom: 1rem; font-weight: 700; }
         </div>
       </div>
 
-      <div class="col" data-aos="fade-up" data-aos-delay="300">
+      <div class="col">
         <div class="card h-100 shadow-sm border-0">
           <i class="fas fa-leaf"></i>
           <h5 class="card-title text-primary mt-3">Environmental Sustainability</h5>
@@ -305,17 +300,17 @@ footer h5 { margin-bottom: 1rem; font-weight: 700; }
       </div>
 
     </div>
-    <a href="about.html" class="btn btn-primary btn-lg mt-4" data-aos="fade-up" data-aos-delay="400">About Us</a>
+    <a href="about.html" class="btn btn-primary btn-lg mt-4">About Us</a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="py-5" data-aos="fade-up">
+<footer class="py-5">
   <div class="container text-center">
     <h5>LUWI Foundation Zambia</h5>
     <div class="mb-3">
-      <a href="https://www.facebook.com/share/1BgJJezErn/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.tiktok.com/@luwi.foundation.z?_r=1&_t=ZS-94AYUzTuB85" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
     </div>
     <div class="mb-3">
       <a href="donate.html">Donate</a> |
@@ -330,9 +325,12 @@ footer h5 { margin-bottom: 1rem; font-weight: 700; }
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
 <script>
+// Initialize AOS
 AOS.init({ duration: 1000, once: true });
 
+// Initialize particles.js
 particlesJS("particles-js", {
   "particles": {
     "number": { "value": 60 },
@@ -348,6 +346,36 @@ particlesJS("particles-js", {
   },
   "retina_detect": true
 });
+
+// Scroll-triggered animations
+document.addEventListener('DOMContentLoaded', () => {
+    const heroElements = document.querySelectorAll('.hero h1, .hero p, .hero .btn');
+    const headings = document.querySelectorAll('h2.text-primary');
+    const teamCards = document.querySelectorAll('.team-card-inner');
+    const focusCards = document.querySelectorAll('.card');
+
+    function animateOnScroll(elements, triggerFactor = 0.85) {
+        const triggerBottom = window.innerHeight * triggerFactor;
+        elements.forEach(el => {
+            const top = el.getBoundingClientRect().top;
+            if (top < triggerBottom) el.classList.add('animate');
+        });
+    }
+
+    // Initial animation
+    animateOnScroll(heroElements, 1);
+    animateOnScroll(headings);
+    animateOnScroll(teamCards);
+    animateOnScroll(focusCards);
+
+    // Animate on scroll
+    window.addEventListener('scroll', () => {
+        animateOnScroll(heroElements, 1);
+        animateOnScroll(headings);
+        animateOnScroll(teamCards);
+        animateOnScroll(focusCards);
+    });
+});
 </script>
 </body>
-        </html>
+</html>
