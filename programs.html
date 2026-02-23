@@ -9,23 +9,19 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-/* HERO */
 .program-hero {
-    background: url('images/programs/program-hero.jpg') center/cover no-repeat;
+    background: url('images/programs/programs-hero.jpg') center/cover no-repeat;
     color: white;
-    padding: 120px 0 60px;
+    padding: 120px 0 80px;
+    text-align: center;
 }
-
-/* Program Card hover */
-.program-card:hover {
-    transform: translateY(-5px);
-    transition: all 0.3s ease;
-}
-
-/* Gallery images hover */
-.gallery-img:hover {
-    transform: scale(1.05);
+.program-card img {
     transition: transform 0.3s ease;
+}
+.program-card img:hover {
+    transform: scale(1.05);
+}
+.gallery-img {
     cursor: pointer;
 }
 </style>
@@ -39,8 +35,7 @@
       <img src="images/logo.png" height="45" class="me-2" alt="LUWI Foundation Logo">
       <strong>LUWI Foundation</strong>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -56,84 +51,92 @@
 </nav>
 
 <!-- HERO -->
-<section class="program-hero text-center">
+<section class="program-hero">
   <div class="container">
     <h1 class="fw-bold">Our Programs</h1>
     <p class="lead">Transforming Lives Through Education, Protection & Empowerment</p>
   </div>
 </section>
 
-<!-- PROGRAMS -->
+<!-- PROGRAMS LIST -->
 <section class="py-5 bg-light">
-  <div class="container">
-    <div class="row g-4">
+<div class="container">
+<div class="row g-4">
 
-      <!-- PROGRAM 1 -->
-      <div class="col-md-6">
-        <div class="card program-card shadow h-100">
-          <img src="images/programs/mental-health.jpg" class="card-img-top" alt="Student Mental Health Program">
-          <div class="card-body">
-            <h5 class="text-primary">Student Mental Health & Counseling</h5>
-            <p>Providing safe spaces, counseling sessions, and mental health awareness programs for students.</p>
-            <button class="btn btn-outline-primary btn-sm mb-2" data-bs-toggle="collapse" data-bs-target="#gallery1">
-              View Activities
-            </button>
-            <div class="collapse" id="gallery1">
-              <div class="row g-2 mt-2">
-                <div class="col-4"><img src="images/programs/mental1.jpg" class="img-fluid rounded gallery-img" alt="Counseling Activity 1"></div>
-                <div class="col-4"><img src="images/programs/mental2.jpg" class="img-fluid rounded gallery-img" alt="Counseling Activity 2"></div>
-                <div class="col-4"><img src="images/programs/mental3.jpg" class="img-fluid rounded gallery-img" alt="Counseling Activity 3"></div>
-              </div>
-              <div class="ratio ratio-16x9 mt-3">
-                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_LINK" title="Mental Health Program Video" allowfullscreen></iframe>
-              </div>
-            </div>
+  <!-- PROGRAM 1 -->
+  <div class="col-md-6">
+    <div class="card program-card shadow h-100">
+      <img src="images/programs/mental-health.jpg" class="card-img-top" alt="Mental Health Program">
+      <div class="card-body">
+        <h5 class="text-primary">Student Mental Health & Counseling</h5>
+        <p>Providing safe spaces, counseling sessions, and mental health awareness programs for students.</p>
+
+        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#gallery1">
+          View Activities
+        </button>
+
+        <div class="collapse mt-3" id="gallery1">
+          <div class="row g-2">
+            <div class="col-4"><img src="images/programs/mental1.jpg" class="img-fluid rounded gallery-img" alt="Activity 1"></div>
+            <div class="col-4"><img src="images/programs/mental2.jpg" class="img-fluid rounded gallery-img" alt="Activity 2"></div>
+            <div class="col-4"><img src="images/programs/mental3.jpg" class="img-fluid rounded gallery-img" alt="Activity 3"></div>
+          </div>
+
+          <div class="ratio ratio-16x9 mt-3">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_LINK" allowfullscreen></iframe>
           </div>
         </div>
+
       </div>
-
-      <!-- PROGRAM 2 -->
-      <div class="col-md-6">
-        <div class="card program-card shadow h-100">
-          <img src="images/programs/gbv.jpg" class="card-img-top" alt="GBV Awareness Program">
-          <div class="card-body">
-            <h5 class="text-primary">GBV Awareness & Prevention</h5>
-            <p>Community sensitization and school-based interventions to prevent gender-based violence.</p>
-            <button class="btn btn-outline-primary btn-sm mb-2" data-bs-toggle="collapse" data-bs-target="#gallery2">
-              View Activities
-            </button>
-            <div class="collapse" id="gallery2">
-              <div class="row g-2 mt-2">
-                <div class="col-4"><img src="images/programs/gbv1.jpg" class="img-fluid rounded gallery-img" alt="GBV Activity 1"></div>
-                <div class="col-4"><img src="images/programs/gbv2.jpg" class="img-fluid rounded gallery-img" alt="GBV Activity 2"></div>
-                <div class="col-4"><img src="images/programs/gbv3.jpg" class="img-fluid rounded gallery-img" alt="GBV Activity 3"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ADD MORE PROGRAMS HERE -->
-
     </div>
   </div>
+
+  <!-- PROGRAM 2 -->
+  <div class="col-md-6">
+    <div class="card program-card shadow h-100">
+      <img src="images/programs/gbv.jpg" class="card-img-top" alt="GBV Program">
+      <div class="card-body">
+        <h5 class="text-primary">GBV Awareness & Prevention</h5>
+        <p>Community sensitization and school-based interventions to prevent gender-based violence.</p>
+
+        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#gallery2">
+          View Activities
+        </button>
+
+        <div class="collapse mt-3" id="gallery2">
+          <div class="row g-2">
+            <div class="col-4"><img src="images/programs/gbv1.jpg" class="img-fluid rounded gallery-img" alt="Activity 1"></div>
+            <div class="col-4"><img src="images/programs/gbv2.jpg" class="img-fluid rounded gallery-img" alt="Activity 2"></div>
+            <div class="col-4"><img src="images/programs/gbv3.jpg" class="img-fluid rounded gallery-img" alt="Activity 3"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ADD MORE PROGRAMS -->
+  <!-- Example: Education, Life Skills, Community Outreach, etc. -->
+
+</div>
+</div>
 </section>
 
 <!-- CALL TO ACTION -->
 <section class="py-5 text-center bg-primary text-white">
-  <div class="container">
-    <h3>Support Our Programs</h3>
-    <p>Your contribution helps us expand these life-changing initiatives.</p>
-    <a href="donate.html" class="btn btn-light btn-lg">Donate Now</a>
-  </div>
+<div class="container">
+<h3>Support Our Programs</h3>
+<p>Your contribution helps us expand these life-changing initiatives.</p>
+<a href="donate.html" class="btn btn-light btn-lg">Donate Now</a>
+</div>
 </section>
 
 <!-- FOOTER -->
 <footer class="bg-dark text-white py-4">
-  <div class="container text-center">
-    <p class="mb-1"><strong>© 2026 LUWI Foundation Zambia</strong></p>
-    <small>Empowering Students | Protecting Futures</small>
-  </div>
+<div class="container text-center">
+<p class="mb-1"><strong>© 2026 LUWI Foundation Zambia</strong></p>
+<small>Empowering Students | Protecting Futures</small>
+</div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
